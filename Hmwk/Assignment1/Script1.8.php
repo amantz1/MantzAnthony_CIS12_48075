@@ -18,7 +18,7 @@
 		//Set the variables:
 		$quantity = 30; // Buying 30 widgets.
 		$price = 119.95;
-		$taxrate = .05 // 5% sales tax.
+		$taxrate = .05; // 5% sales tax.
 		
 		//Calculate the total:
 		$total = $quantity * $price;
