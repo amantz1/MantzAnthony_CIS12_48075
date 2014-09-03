@@ -33,8 +33,7 @@
           <th>!X||!Y</th>
           <th>!(X||Y)</th>
           <th>!X&&!Y</th>
-    	</tr>
-		<tr>
+    	</tr><tr>
         <?php
 			$x=true;
 			$y=true;
@@ -44,8 +43,7 @@
 			echo "<td>".(!$y?"T":"F")."</td>";
 			echo "<td>".($x&&$y?"T":"F")."</td>";
 		?>
-  		</tr>
-        <tr>
+  		</tr><tr>
         <?php
         	$y=false;	
             echo "<td>".($x?"T":"F")."</td>";
