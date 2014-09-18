@@ -20,7 +20,7 @@
 
 <body>
 <!-Script 2.1 - form.html-->
-<form action="handle_form.php" method="post">
+<form action="form_handle.php" method="post">
 
 	<fieldset><legend>Enter you informaion in the form below: </legend>
     
@@ -28,7 +28,7 @@
     
     <p><label>Email Address: <input type="text" name="email" size="40" maxlength="60" /></label></p>
     
-    <p><label for="gender">Gender:</label><input type="radio" name="gender" value="M" /><input type="radio" name="gender" value="F" /> Female</p>
+    <p><label for="gender">Gender:</label><input type="radio" name="gender" value="M" />Male<input type="radio" name="gender" value="F" /> Female</p>
     
     <p><label>Age:
     <select name="age">
