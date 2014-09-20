@@ -1,7 +1,7 @@
 <?php 
 	/* Anthony Mantz
 		9/18/2014
-		Assignment 3: Chapter 2 Code Snippets Script 2.1
+		Assignment 3: Chapter 2 Code Snippets Script 2.4
 	*/
 ?>
 
@@ -20,7 +20,7 @@
 
 <body>
 <!-Script 2.1 - form.html-->
-<form action="Script2_02.php" method="post">
+<form action="handle_form.php" method="post">
 
 	<fieldset><legend>Enter you informaion in the form below: </legend>
     

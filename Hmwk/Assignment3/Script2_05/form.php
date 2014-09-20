@@ -20,7 +20,7 @@
 
 <body>
 <!-Script 2.1 - form.html-->
-<form action="Script2_02.php" method="post">
+<form action="handle_form.php" method="post">
 
 	<fieldset><legend>Enter you informaion in the form below: </legend>
     
