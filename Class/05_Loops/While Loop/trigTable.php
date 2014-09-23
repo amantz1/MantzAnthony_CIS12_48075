@@ -13,30 +13,43 @@
 </head>
 
 <body>
+
 <h1>Trig Table</h1>
+<?php
+	//Input the data from the form
+	$angleStart=$_GET['angleStart'];
+	$angleEnd=$_GET['angleEnd'];
+	$angleInc=$_GET['angleInc'];
+?>
 <table width="200" border="1">
     <tr>
-      <th>Radians</th>
       <th>Degrees</th>
+      <th>Radians</th>
       <th>Sine</th>
       <th>Cosine</th>
       <th>Tangent</th>
     </tr>
 <?php
 	//For - Loop
-	for($angle=0;$angle<=180;$angle+=5){
-		echo "<tr>";echo "<td>";echo "$angle";echo "</td>";
+	//for($angleStart;$angleStart<=$angleEnd;$angleStart+=$angleInc){
+		//echo "<tr>";echo "<td>";echo "$angleStart";echo "</td>";
+	$angle=$angleStart;
+		do{
+		echo "<tr>";
+		echo "<td>$angle</td>";
 		//Calculate
 		$rad=number_format($angle*(atan(1)/45),4);
-		$sine=number_format(sin($rad),2);
-		$cosine=number_format(cos($rad),2);
-		$tangent=number_format(tan($rad),2);
+		$sine=number_format(sin($rad),4);
+		$cosine=number_format(cos($rad),4);
+		$tangent=number_format(tan($rad),4);
 		echo "<td>$rad</td>";
 		echo "<td>$sine</td>";
 		echo "<td>$cosine</td>";
 		echo "<td>$tangent</td>";
 		echo "</tr>";
-	}
+		$angle+=$angleInc;
+	} 	while($angle<$angleEnd)
+
 ?>
 </table>
 

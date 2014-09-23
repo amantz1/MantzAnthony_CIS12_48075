@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<form action="trig.php" method="get">
+<form action="trigTable.php" method="get">
 	<input name="angleStart" type="text" id="angleStart">Angle Start<br />
     <input name="angleEnd" type="text" id="angleEnd">Angle End<br/>
     <input name="angleInc" type="tel" id="angleInc">Angle Increment<br />
