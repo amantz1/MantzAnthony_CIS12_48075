@@ -34,7 +34,7 @@
 	//for($angleStart;$angleStart<=$angleEnd;$angleStart+=$angleInc){
 		//echo "<tr>";echo "<td>";echo "$angleStart";echo "</td>";
 	$angle=$angleStart;
-		do{
+		while($angle<$angleEnd){
 		echo "<tr>";
 		echo "<td>$angle</td>";
 		//Calculate
@@ -48,7 +48,7 @@
 		echo "<td>$tangent</td>";
 		echo "</tr>";
 		$angle+=$angleInc;
-	} 	while($angle<$angleEnd)
+	} 	
 
 ?>
 </table>
