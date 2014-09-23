@@ -1,7 +1,7 @@
 <?php
 	/*Anthony Mantz
 	9/15/2014
-	Purpose: First for-loop Trig Table
+	Purpose: While Loop Trig Table
 	*/
 ?>
 <!doctype html>
@@ -9,7 +9,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>Trig Table With For Loop</title>
+<title>Trig Table With While Loop</title>
 </head>
 
 <body>
