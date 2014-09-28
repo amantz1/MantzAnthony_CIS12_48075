@@ -18,7 +18,7 @@
 			$trigTable[$col]=array();
 		}
 		//Calculations for each parallel array
-		for($angle=$angleStart;$angle<=$angleEnd;$angle+=$angleInc){
+		for($angle=$angleStart;$angle<=$angleStop;$angle+=$angleInc){
 			//Calulate
 			$trigTable[1][$angle]=$angle;
 			$trigTable[2][$angle]=number_format($angle*(atan(1)/45),4);
@@ -30,7 +30,7 @@
 	}
 	function display($str, $angleStart, $angleStop, $angleInc, $trigTable){
 		echo $str;
-		for($angle=$angleStart;$angle<=$angleEnd;$angle+=$angleInc){
+		for($angle=$angleStart;$angle<=$angleStop;$angle+=$angleInc){
 			echo "<tr>";
 			for($cols=1;$cols<=5;$cols++){
 				echo "<td>".$trigTable[$cols][$angle]."</td>";
@@ -38,18 +38,19 @@
 			echo "</tr>";
 		}
 		echo "</table>";
+	}
 ?>
 </head>
 
 <body>
-    <h1>Trig Table</h1>
+    <h1>Trig Table Using Functions</h1>
         <?php
             //Input the data from the form
             $angleStart=$_GET['angleStart'];
             $angleEnd=$_GET['angleEnd'];
             $angleInc=$_GET['angleInc'];
             //Declare and fill the arrays
-            $trigTable=$trigTab($angleStart, $angleEnd, $angleInc);
+            $trigTable=trigTab($angleStart, $angleEnd, $angleInc);
             //Heading for the table
             $str='<table width="200" border="1">';
             $str.="<tr>";
