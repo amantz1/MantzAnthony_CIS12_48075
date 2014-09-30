@@ -10,6 +10,9 @@
 <meta charset="UTF-8">
 <title>Assignment 5 - Savings Table</title>
 <?php
+	function getData(){
+		
+	}
 	function createSavTab($d, $y){
 		$savTab=array();
 		for($yr=1;$yr<=$y;$yr++){
@@ -44,8 +47,10 @@
 
 <body>
 	<?php
-		$savingsTable=createSavTab(100, 50);
-		dispSavTab($savingsTable,50)
+		$deposit=$_REQUEST['deposit'];
+		$years=$_REQUEST['years'];
+		$savingsTable=createSavTab($deposit, $years);
+		dispSavTab($savingsTable,$years)
 	?>
 
 </body>
