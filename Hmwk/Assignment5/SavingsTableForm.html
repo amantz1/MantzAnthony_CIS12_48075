@@ -6,13 +6,29 @@
 <head>
 <meta charset="UTF-8">
 <title>Savings Table Form</title>
+<style type="text/css">
+	h1, form, table {
+		text-align: center;
+	}
+	.formlayout {
+	text-align: right;
+	line-height: 2em;
+	}
+</style>
 </head>
 
 <body>
+	<h1>Savings Table Input</h1>
 	<form action="SavingsTable.php" method="post" target="_self">
-    Enter initial deposit amount<input name="deposit" type="text"><br />
-    Enter maximum number of years<input name="years" type="text"><br />
-    <input name="submit" type="submit" value="Submit">
-    </form>
+      <blockquote>
+        <p><span class="formlayout">Enter initial deposit amount 
+            <input name="deposit" type="text"><br />
+        Enter maximum number of years  
+        <input name="years" type="text">
+        </span><br />
+          <input name="submit" type="submit" value="Submit">
+        </p>
+      </blockquote>
+	</form>
 </body>
 </html>

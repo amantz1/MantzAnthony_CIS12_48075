@@ -7,6 +7,15 @@
 <!doctype html>
 <html>
 <head>
+<style type="text/css">
+	h1 {
+		text-align: center;	
+	}
+	td {
+		width: 100px;
+		text-align: center;	
+	}
+</style>
 <meta charset="UTF-8">
 <title>Assignment 5 - Savings Table</title>
 <?php
@@ -26,7 +35,7 @@
 	}
 	function dispSavTab($savTab, $y){
 		echo '<h1>Savings Table Using Functions</h1>';
-		echo '<table width="300" border="1">';
+		echo '<table width="700" border="1" align="center">';
         echo '<tr><th>Year</th>';
 		for($r=5;$r<=10;$r++){
 			echo "<th>".$r."%</th>";
