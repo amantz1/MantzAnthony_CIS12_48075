@@ -114,10 +114,10 @@ CREATE TABLE `entity_instructor` (
   `email_address` varchar(30) DEFAULT NULL,
   `area_code` smallint(5) DEFAULT NULL,
   `phone_number` int(10) DEFAULT NULL,
-  `office_bldg` tinyint(3) DEFAULT NULL,
+  `office_bldg_id` tinyint(3) DEFAULT NULL,
   `office_number` smallint(5) DEFAULT NULL,
-  `department` tinyint(3) DEFAULT NULL,
-  `discipline` tinyint(3) DEFAULT NULL,
+  `department_id` tinyint(3) DEFAULT NULL,
+  `discipline_id` tinyint(3) DEFAULT NULL,
   PRIMARY KEY (`instructor_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -128,7 +128,7 @@ CREATE TABLE `entity_instructor` (
 
 LOCK TABLES `entity_instructor` WRITE;
 /*!40000 ALTER TABLE `entity_instructor` DISABLE KEYS */;
-INSERT INTO `entity_instructor` VALUES (1150258,'Mark','E','Lehr','mark.lehr@rcc.edu',951,2228260,NULL,222,NULL,NULL);
+INSERT INTO `entity_instructor` VALUES (1111111,'Jim','J','Jones','jimjones@rcc.edu',951,2228260,12,223,1,1),(1150258,'Mark','E','Lehr','mark.lehr@rcc.edu',951,2228260,4,222,1,2);
 /*!40000 ALTER TABLE `entity_instructor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -219,7 +219,7 @@ DROP TABLE IF EXISTS `enum_discipline`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enum_discipline` (
   `disc_id` tinyint(3) NOT NULL,
-  `discipline` varchar(15) DEFAULT NULL,
+  `discipline` varchar(25) DEFAULT NULL,
   `menumonic` varchar(3) DEFAULT NULL,
   PRIMARY KEY (`disc_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -231,6 +231,7 @@ CREATE TABLE `enum_discipline` (
 
 LOCK TABLES `enum_discipline` WRITE;
 /*!40000 ALTER TABLE `enum_discipline` DISABLE KEYS */;
+INSERT INTO `enum_discipline` VALUES (1,'Computer Science','CSC'),(2,'Basket Weaving','BSW');
 /*!40000 ALTER TABLE `enum_discipline` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -342,4 +343,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-10-06  9:16:24
+-- Dump completed on 2014-10-08  9:32:05
