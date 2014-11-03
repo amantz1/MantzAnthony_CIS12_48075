@@ -1,5 +1,5 @@
 <?php
-
+	echo '<h2>Where\'s the code???</h2><p>You are seeing this because opening the active version of this page actually fills the database. To see the code used please <a href="https://github.com/amantz1/MantzAnthony_CIS12_48075/blob/master/Projects/v2/ClassProject/Design/db_fill.php" target="_blank">click here</a>.</p>';
 	/*
 	//Connect to database
 	require ('../../mysqli_connect.php');
