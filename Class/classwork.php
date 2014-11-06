@@ -1,9 +1,8 @@
 <?php
 $page_title = "Anthony Mantz's PHP Classwork Page";
 include ('./includes/header.php');
-
-//Change this page to be a list of links to the different weeks
-
+include ('./includes/iframecontent.php');
+//Possibly use javascript to change the source of the iframe (drop down lists?)
 ?>
 <h1>Work in progress...check back soon</h1>
 <iframe src="01_HelloWorld/HelloWorld.php"></iframe>
