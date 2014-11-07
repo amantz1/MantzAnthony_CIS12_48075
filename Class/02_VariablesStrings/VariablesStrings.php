@@ -22,7 +22,7 @@
 		$grossPay=$hours*$payRate;
 		//Output the result
 		echo "<p>Hours worked = $hours (hrs)</p>";
-		echo '<p>Pay rate = $$payRate</p>';
+		echo '<p>Pay rate = $'.$payRate.'</p>';
 		echo "<p>Pay check = $".$grossPay.'</p>';
 	?>
 </body>

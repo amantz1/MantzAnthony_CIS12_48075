@@ -1,6 +1,6 @@
 	</div>
     <div id="footer">
-    	<p>Copyright &copy; Anthony Mantz 2014</p>
+    	<p>&copy; 2014 Anthony Mantz</p>
    	</div>
 </body>
 </html>
