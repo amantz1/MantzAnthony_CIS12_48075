@@ -76,5 +76,8 @@
 	}
 		
 ?>
+
+<p><a href="../Script2_05/form.php" target="_self">next</a></p>
+
 </body>
 </html>

@@ -24,5 +24,8 @@
 		echo '<p>Please go back and fill out the form again.</p>';
 	}
 ?>
+
+<p><a href="../Script2_06/calendar.php" target="_self">next</a></p>
+
 </body>
 </html>

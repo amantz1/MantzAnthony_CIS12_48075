@@ -26,6 +26,8 @@
 		//Print the values:
 		echo "<p>The book <em>$book</em> was written by $author.</p>";
 	?>
+    <p><a href="Script1.08.php" target="_self">next</a></p>
+
 </body>
 
 </html>

@@ -30,6 +30,8 @@
 		//Print the results:
 		echo '<p>You are puchasing <b>' . $quantity . '</b> widget(s) at a cost of <b>$' . $price . '</b> each. With tax, the total come to <b>$' . $total . '</b>.</p>';
 	?>
+    <p><a href="Script1.09.php" target="_self">next</a></p>
+
 </body>
 
 </html>

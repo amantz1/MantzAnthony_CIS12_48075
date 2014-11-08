@@ -12,7 +12,7 @@
 <style type="text/css">
 body {
 	text-align: center;
-	margin-top: 20%;
+	margin-top: 20px;
 }
 </style>
 

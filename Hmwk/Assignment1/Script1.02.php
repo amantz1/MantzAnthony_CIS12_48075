@@ -17,6 +17,7 @@
     <p>This is standard HTML.</p>
    	<?php
 	?>
+    <p><a href="Script1.03.php" target="_self">next</a></p>
 </body>
 
 </html>

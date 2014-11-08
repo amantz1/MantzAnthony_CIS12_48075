@@ -29,5 +29,8 @@
 	<tt>$comments</tt></p>
 	<p>We will reply to you at <i>$email</i>.</p>\n";
 ?>
+
+<p><a href="./Script2_03/form.php" target="_self">next</a></p>
+
 </body>
 </html>

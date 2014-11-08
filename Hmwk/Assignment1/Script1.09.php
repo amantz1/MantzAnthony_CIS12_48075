@@ -21,6 +21,8 @@
 		//Print a message, using predefined constants and the TODAY constant:
 		echo '<p>Today is ' . TODAY . '.<br /> This server is running version <b>' . PHP_VERSION . '</b> of PHP on the <b>' . PHP_OS . '</b> operating system.</p>';
 	?>
+    <p><a href="Script1.10.php" target="_self">next</a></p>
+
 </body>
 
 </html>

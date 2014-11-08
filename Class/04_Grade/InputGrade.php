@@ -17,5 +17,6 @@
 	//Output the Results
 	echo "<h1>A score of $score = $grade</h1>"	
 ?>
+<p>There are multiple snippets of code that display exactly the same, but function differently for this classwork example. To view all the variations of the code, please <a href="https://github.com/amantz1/MantzAnthony_CIS12_48075/tree/master/Class/04_Grade" target="new">click here</a> to visit github.</p>
 </body>
 </html>

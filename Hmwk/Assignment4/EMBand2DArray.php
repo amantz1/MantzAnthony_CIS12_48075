@@ -11,16 +11,15 @@
 <title>EM Spectrum Band Table - 2-D Array</title>
 <style type="text/css">
 	body {
-		width: 800px;
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	h1, td {
 		text-align:center
 	}
 	table {
 		float: right;
-	}
-	img {
-		float: left;
 	}
 </style>
 </head>

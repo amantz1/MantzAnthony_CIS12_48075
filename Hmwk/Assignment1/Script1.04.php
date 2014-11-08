@@ -29,6 +29,8 @@
     echo "<p>Now I'm done.</p>";
     // End of PHP code.
 ?>
+    <p><a href="Script1.05.php" target="_self">next</a></p>
+
 </body>
 
 </html>

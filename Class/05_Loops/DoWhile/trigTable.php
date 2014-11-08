@@ -21,7 +21,7 @@
 	$angleEnd=$_GET['angleEnd'];
 	$angleInc=$_GET['angleInc'];
 ?>
-<table width="200" border="1">
+<table width="200" border="1" style="float: left; margin-right: 30px;">
     <tr>
       <th>Degrees</th>
       <th>Radians</th>
@@ -48,10 +48,11 @@
 		echo "<td>$tangent</td>";
 		echo "</tr>";
 		$angle+=$angleInc;
-	} 	while($angle<$angleEnd)
+	} 	while($angle<=$angleEnd)
 
 ?>
 </table>
+<p>There are multiple snippets of code that display exactly the same, but function differently for this classwork example. To view all the variations of the code, please <a href="https://github.com/amantz1/MantzAnthony_CIS12_48075/tree/master/Class/05_Loops" target="new">click here</a> to visit github.</p>
 
 </body>
 </html>

@@ -62,5 +62,8 @@
 			
 		} // End of main FOREACH
 	?>
+    
+<p><a href="../Script2_08/sorting.php" target="_self">next</a></p>
+
 </body>
 </html>

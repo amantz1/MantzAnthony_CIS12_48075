@@ -18,6 +18,8 @@
    	<?php
 		echo 'This was generated using PHP!';
 	?>
+    <p><a href="Script1.04.php" target="_self">next</a></p>
+
 </body>
 
 </html>

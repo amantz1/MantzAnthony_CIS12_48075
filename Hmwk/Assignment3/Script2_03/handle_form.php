@@ -39,5 +39,8 @@
 		echo '<p><b>You forgot to enter your gender!</b></p>';
 	}
 ?>
+
+<p><a href="../Script2_04/form.php" target="_self">next</a></p>
+
 </body>
 </html>

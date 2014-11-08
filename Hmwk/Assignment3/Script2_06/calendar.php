@@ -47,5 +47,8 @@
 	echo '</select>';
 	
 ?>
+
+<p><a href="../Script2_07/multi.php" target="_self">next</a></p>
+
 </body>
 </html>

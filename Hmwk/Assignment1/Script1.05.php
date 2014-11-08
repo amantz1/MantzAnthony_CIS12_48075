@@ -28,6 +28,8 @@
 		//Print the server's information:
 		echo "<p>This server is running: <br /><b>$server</b></p>\n";
 	?>
+    <p><a href="Script1.06.php" target="_self">next</a></p>
+
 </body>
 
 </html>

@@ -11,16 +11,15 @@
 <title>EM Spectrum Band Table - No Array</title>
 <style type="text/css">
 	body {
-		width: 800px;
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	h1, td {
 		text-align:center
 	}
 	table {
 		float: right;
-	}
-	img {
-		float: left;
 	}
 </style>
 </head>
@@ -64,5 +63,8 @@
 	?>
 </table>
 <img src="xid-8432300_1.png" alt="EMSpectrum" width="478" height="338">
+
+<p style="clear: both;"><a href="EMBand1DArray.php" target="_self">next</a></p>
+
 </body>
 </html>

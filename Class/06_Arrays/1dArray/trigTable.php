@@ -35,7 +35,7 @@
 		$tangent[$angle]=number_format(tan($radians[$angle]),4);
 	};
 ?>
-<table width="200" border="1">
+<table width="200" border="1" style="float: left; margin-right: 30px;">
     <tr>
       <th>Degrees</th>
       <th>Radians</th>
@@ -59,5 +59,7 @@
 <?php
 	echo "<p>The number of elements in the columns are ".count($degree)."</p>";
 ?>
+<p>There are multiple snippets of code that display exactly the same, but function differently for this classwork example. To view all the variations of the code, please <a href="https://github.com/amantz1/MantzAnthony_CIS12_48075/tree/master/Class/06_Arrays" target="new">click here</a> to visit github.</p>
+
 </body>
 </html>

@@ -14,6 +14,8 @@
 
 <body>
 	<!--Script 1.1 - template.html -->
+    <p>This first script doesn't do anything</p>
+    <p><a href="Script1.02.php" target="_self">next</a></p>
 </body>
 
 </html>
