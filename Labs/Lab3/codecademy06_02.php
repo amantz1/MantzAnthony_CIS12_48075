@@ -19,5 +19,6 @@
 	}
 	echo "<p>And now it's done.</p>";
     ?>
+    <p><a href="./codecademy06_03.php" target="_self">Next</a></p>
     </body>
 </html>

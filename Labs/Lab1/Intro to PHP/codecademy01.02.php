@@ -14,5 +14,6 @@
             echo "My first line of PHP!"; 
           ?>
         </p>
+    	<p><a href="./codecademy01.03.php" target="_self">Next</a></p>
 	</body>
 </html>

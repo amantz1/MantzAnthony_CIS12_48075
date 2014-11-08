@@ -22,5 +22,6 @@
       echo 'You have the ' . $deck[2][0] . '!';
       ?>
     </p>
+    <p><a href="./codecademy11_07.php" target="_self">Next</a></p>
   </body>
 </html>

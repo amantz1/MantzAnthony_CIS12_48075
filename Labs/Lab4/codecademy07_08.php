@@ -23,4 +23,5 @@
 	print strtoupper($names[$winner]);
 	?>
 	</p>
+    <p><a href="./codecademy08_01.php" target="_self">Next</a></p>
 </html>

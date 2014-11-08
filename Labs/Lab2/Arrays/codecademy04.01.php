@@ -12,6 +12,7 @@
   <body>
     <?php
       $array = array("Egg", "Tomato", "Beans");
-    ?>    
+    ?>
+    <p><a href="./codecademy04.02.php" target="_self">Next</a></p>    
   </body>
 </html>

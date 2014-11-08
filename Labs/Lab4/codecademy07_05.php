@@ -21,4 +21,5 @@
     print substr($myName, $place, 1);
     ?>
     </p>
+    <p><a href="./codecademy07_06.php" target="_self">Next</a></p>
 </html>

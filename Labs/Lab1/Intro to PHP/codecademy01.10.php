@@ -14,5 +14,6 @@
             echo "Oh, the humanity!";
             //This is a comment
           ?></p>
+          <p><a href="./codecademy01.11.php" target="_self">Next</a></p>
     </body>
 </html>

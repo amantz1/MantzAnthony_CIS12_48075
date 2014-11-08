@@ -9,7 +9,6 @@ function create_ad() {
 	create_ad();
 ?>
 <h1>Content Header</h1>
-<h2>Am I looking at the right file</h2>
 
     <p>This is where the page-specific content goes. This section, and the corresponding header, will change from one page to the next.</p>
 

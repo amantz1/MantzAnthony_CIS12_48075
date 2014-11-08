@@ -16,5 +16,6 @@
         print $tens[2];
       ?>
     </p>
+    <p><a href="./codecademy04.05.php" target="_self">Next</a></p>
   </body>
 </html>

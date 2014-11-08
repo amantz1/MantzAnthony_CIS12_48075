@@ -22,15 +22,16 @@
             public $age;
             
             public function __construct($firstname, $lastname, $age){
-                $this->$firstname=$firstname;
-                $this->$lastname=$lastname;
-                $this->$age=$age;
+                $this->firstname=$firstname;
+                $this->lastname=$lastname;
+                $this->age=$age;
             }
         }
         $teacher=new Person("boring", "12345", 12345);
         $student=new Person("Anthony", "Mantz", 35);
-        echo $student->$age;
+        echo $student->age;
         ?>
       </p>
+      <p><a href="../codecademy09_06/codecademy09_06.php" target="_self">Next</a></p>
     </body>
 </html>

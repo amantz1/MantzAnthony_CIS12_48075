@@ -21,5 +21,6 @@
         print $languages[2];
       ?>
     </p>
+    <p><a href="./codecademy04.07.php" target="_self">Next</a></p>
   </body>
 </html>

@@ -22,5 +22,6 @@
         King::proclaim();
       ?>
     </p>
+    <p><a href="./codecademy10_08.php" target="_self">Next</a></p>
   </body>
 </html>

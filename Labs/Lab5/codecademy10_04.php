@@ -27,5 +27,6 @@
         echo $bicycle->honk();
       ?>
     </p>
+    <p><a href="./codecademy10_05.php" target="_self">Next</a></p>
   </body>
 </html>

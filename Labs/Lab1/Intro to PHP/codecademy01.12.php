@@ -15,6 +15,7 @@
         <p><?php
             $myName="Anthony";
             $myAge=35;
-        ?></p>   
+        ?></p>
+        <p><a href="./codecademy01.13.php" target="_self">Next</a></p>  
 	</body>
 </html>

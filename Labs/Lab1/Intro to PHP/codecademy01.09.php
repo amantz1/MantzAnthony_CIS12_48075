@@ -13,5 +13,6 @@
         <p><?php
             echo "Oh, the humanity!";
           ?></p>
+          <p><a href="./codecademy01.10.php" target="_self">Next</a></p>
     </body>
 </html>

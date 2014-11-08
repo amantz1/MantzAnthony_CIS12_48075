@@ -17,5 +17,6 @@
 		} while ($loopCond);
 		echo ("<p>Now the loop is done running.</p>");
     ?>
+    <p><a href="./codecademy06_07.php" target="_self">Next</a></p>
     </body>
 </html>

@@ -13,7 +13,7 @@
     <p>
       <?php
         class Vehicle {
-          final public function honk() {
+          public function honk() {
             return "HONK HONK!";
           }
         }
@@ -27,5 +27,6 @@
         echo $bicycle->honk();
       ?>
     </p>
+    <p><a href="./codecademy10_06.php" target="_self">Next</a></p>
   </body>
 </html>

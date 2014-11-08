@@ -26,5 +26,6 @@
         default:;
      }
     ?>
+    <p><a href="../Arrays/codecademy04.01.php" target="_self">Next</a></p>
 	</body>
 </html>

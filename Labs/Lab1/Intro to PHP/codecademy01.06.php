@@ -14,5 +14,6 @@
             echo "Concatenate"." the "." concoction."
           ?>
         </p>
+        <p><a href="./codecademy01.07.php" target="_self">Next</a></p>
 	</body>
 </html>

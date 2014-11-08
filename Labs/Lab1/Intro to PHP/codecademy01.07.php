@@ -14,5 +14,6 @@
                 echo 17 * 123;
           ?>
         </p>
+        <p><a href="./codecademy01.08.php" target="_self">Next</a></p>
 	</body>
 </html>

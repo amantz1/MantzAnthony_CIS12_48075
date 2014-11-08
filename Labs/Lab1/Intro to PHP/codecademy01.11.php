@@ -14,6 +14,7 @@
         <!-- Write your PHP code below!-->
         <p><?php
             $myName="Anthony";
-        ?></p>   
+        ?></p>
+        <p><a href="./codecademy01.12.php" target="_self">Next</a></p>  
 	</body>
 </html>

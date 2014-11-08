@@ -15,4 +15,5 @@
         ?>
       </p>
     </body>
+    <p><a href="./codecademy08_02.php" target="_self">Next</a></p>
 </html>

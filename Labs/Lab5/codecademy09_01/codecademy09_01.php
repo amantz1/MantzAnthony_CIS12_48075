@@ -42,5 +42,6 @@
         echo $me->greet(); 
         ?>
         </p>
+        <p><a href="../codecademy09_02/codecademy09_02.php" target="_self">Next</a></p>
     </body>
 </html>

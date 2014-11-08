@@ -19,5 +19,6 @@
         $i++;
     endwhile;
     ?>
+    <p><a href="./codecademy06_05/codecademy06_05.php" target="_self">Next</a></p>
     </body>
 </html>

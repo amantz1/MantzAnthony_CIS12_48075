@@ -17,5 +17,6 @@
         $array = array("Egg", "Tomato", "Beans", "Chips", "Sausage" );        
       ?>
     </p>
+    <p><a href="./codecademy04.03.php" target="_self">Next</a></p>
   </body>
 </html>

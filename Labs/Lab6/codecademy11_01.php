@@ -16,5 +16,7 @@
         echo 'I love eating ' . $fruits[1]/* Your code here! */ . ' too!';
       ?>
     </p>
+        <p><a href="./codecademy11_02.php" target="_self">Next</a></p>
+
   </body>
 </html>

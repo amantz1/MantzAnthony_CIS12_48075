@@ -22,5 +22,6 @@
         echo "touchdown!";
       ?>
     </p>
+    <p><a href="./codecademy06_01/codecademy06_01.php" target="_self">Next</a></p>
   </body>
 </html>

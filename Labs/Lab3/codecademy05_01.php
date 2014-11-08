@@ -14,5 +14,6 @@
         echo "<p>$leap</p>";
       }
     ?>
+    <p><a href="./codecademy05_02.php" target="_self">Next</a></p>
   </body>
 </html>

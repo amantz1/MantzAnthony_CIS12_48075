@@ -18,4 +18,5 @@
     print count($myArray);
 	?>
 	</p>
+    <p><a href="./codecademy07_07.php" target="_self">Next</a></p>
 </html>

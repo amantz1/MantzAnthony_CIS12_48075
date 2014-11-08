@@ -14,5 +14,6 @@
              echo "I'm learning PHP.";   
           ?>
         </h1>
+    <p><a href="./codecademy01.06.php" target="_self">Next</a></p>
 	</body>
 </html>

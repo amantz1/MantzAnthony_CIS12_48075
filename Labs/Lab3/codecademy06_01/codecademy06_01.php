@@ -29,5 +29,6 @@
 	}
 	echo "<p>It took {$flipCount} flips!</p>";
 	?>
+    <p><a href="../codecademy06_02.php" target="_self">Next</a></p>
     </body>
 </html>

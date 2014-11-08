@@ -28,4 +28,5 @@
     print($lowercase);
     ?>
   </p>
+  <p><a href="./codecademy07_03.php" target="_self">Next</a></p>
 </html>

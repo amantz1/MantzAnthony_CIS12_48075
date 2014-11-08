@@ -19,5 +19,6 @@
         $i++;
     }
     ?>
+    <p><a href="./codecademy06_04.php" target="_self">Next</a></p>
     </body>
 </html>

@@ -17,6 +17,7 @@
             $myAge=35;
             echo $myName;
             echo $myAge;
-        ?></p>   
+        ?></p>
+        <p><a href="../ConditionalsAndControlFlow/codecademy02.01.php" target="_self">Next</a></p>
 	</body>
 </html>

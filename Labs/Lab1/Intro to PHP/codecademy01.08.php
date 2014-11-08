@@ -14,5 +14,6 @@
         <p><?php
             $myName = "Anthony";
         ?></p>
+        <p><a href="./codecademy01.09.php" target="_self">Next</a></p>
     </body>
 </html>

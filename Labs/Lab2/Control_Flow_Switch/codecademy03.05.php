@@ -33,5 +33,6 @@
             echo "I don't know how much \$i is.";
     endswitch;
     ?>
+    <p><a href="./codecademy03.06.php" target="_self">Next</a></p>
     </body>
 </html>

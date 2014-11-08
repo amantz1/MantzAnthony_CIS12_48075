@@ -17,5 +17,6 @@
       }
       ?>
     </p>
+    <p><a href="./codecademy05_05/codecademy05_05.php" target="_self">Next</a></p>
   </body>
 </html>

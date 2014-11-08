@@ -13,6 +13,7 @@
 	<body>
         <p>
             <?php echo "Anthony Mantz"; ?>
-        </p>   
+        </p>
+        <p><a href="./codecademy01.05.php" target="_self">Next</a></p>  
 	</body>
 </html>

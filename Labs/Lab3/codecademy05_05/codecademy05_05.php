@@ -26,5 +26,6 @@
         ?>
       </ul>
     </div>
+    <p><a href="../codecademy05_06.php" target="_self">Next</a></p>
   </body>
 </html>

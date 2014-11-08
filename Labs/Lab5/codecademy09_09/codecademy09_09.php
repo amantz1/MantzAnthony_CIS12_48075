@@ -30,5 +30,6 @@
             echo $cat1->meow();
         ?>
       </p>
+      <p><a href="../codecademy09_10/codecademy09_10.php" target="_self">Next</a></p>
     </body>
 </html>

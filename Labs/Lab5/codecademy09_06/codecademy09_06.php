@@ -12,6 +12,7 @@
       <link type='text/css' rel='stylesheet' href='style.css'/>
 	</head>
 	<body>
+      <p>This page did not work outside of Codecademy. To skip, click <a href="../codecademy09_07/codecademy09_07.php" target="_self">Next</a></p>
       <p>
         <!-- Your code here -->
         <?php
@@ -22,13 +23,13 @@
             public $age;
             
             public function __construct($firstname, $lastname, $age){
-                $this->$firstname=$firstname;
-                $this->$lastname=$lastname;
-                $this->$age=$age;
+                $this->firstname=$firstname;
+                $this->lastname=$lastname;
+                $this->age=$age;
             }
             
             public function greet($firstname, $lastname){
-                return "Hello, my name is ".$this->firstname." ".$this->lastname.". Nice to meet you!:-)";
+                return "Hello, my name is ".$this->$firstname." ".$this->$lastname.". Nice to meet you!:-)";
             }
         }
         $teacher=new Person("boring", "12345", 12345);
@@ -39,5 +40,6 @@
         echo greet($student);
         ?>
       </p>
+      <p><a href="../codecademy09_07/codecademy09_07.php" target="_self">Next</a></p>
     </body>
 </html>

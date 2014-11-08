@@ -17,5 +17,6 @@
         greetings("Anthony");
         ?>
       </p>
+      <p><a href="./codecademy08_07.php" target="_self">Next</a></p>
     </body>
 </html>

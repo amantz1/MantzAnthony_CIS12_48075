@@ -53,5 +53,6 @@
         unset($word);
       ?>
     </p>
+    <p><a href="./codecademy01.02.php" target="_self">Next</a></p>
   </body>
 </html>

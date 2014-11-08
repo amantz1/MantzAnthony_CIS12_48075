@@ -15,5 +15,6 @@
       <?php /*Your code here */ 
         echo "Now I know the basics of OOP!";
       ?></p>
+      <p><a href="../codecademy10_01.php" target="_self">Next</a></p>
     </body>
 </html>

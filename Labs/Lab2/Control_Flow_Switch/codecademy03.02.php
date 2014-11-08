@@ -26,5 +26,6 @@
             echo "The value isn't 0, 1 or 2";
     }
     ?>
+    <p><a href="./codecademy03.03.php" target="_self">Next</a></p>
     </body>
 </html>

@@ -21,5 +21,6 @@
         }
         else print "equals";
     ?>
+    <p><a href="./codecademy03.02.php" target="_self">Next</a></p>
     </body>
 </html>

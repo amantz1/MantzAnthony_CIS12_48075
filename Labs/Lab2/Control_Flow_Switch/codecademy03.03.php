@@ -22,5 +22,6 @@
     }
     
     ?>
+    <p><a href="./codecademy03.04.php" target="_self">Next</a></p>
     </body>
 </html>

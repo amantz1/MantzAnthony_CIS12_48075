@@ -43,5 +43,6 @@
       }
       ?>
     </p>
+    <p><a href="./codecademy11_06.php" target="_self">Next</a></p>
   </body>
 </html>

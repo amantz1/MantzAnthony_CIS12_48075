@@ -13,4 +13,5 @@
     print $length;
     ?>
   </p>
+  <p><a href="./codecademy07_02.php" target="_self">Next</a></p>
 </html>
