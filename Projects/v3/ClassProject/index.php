@@ -1,15 +1,10 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
-</head>
-
-<body>
-<h1>Welcome to the future home of <em>Rock and a Hard Place Productions!</em></h1>
-<p>This is where general info about the site goes</p>
  <?php
-	include ('includes/sitetree.php');
+ 	$page_title="Rock and a Hard Place Home - Complete Digital Production";
+	include ('./includes/header.php');
+	
+	echo '<h2>This is the future home page. It doesn\'t really do anything yet.</h2>';
+	
+	include ('./includes/footer.php');
 ?> 
   
 </body>

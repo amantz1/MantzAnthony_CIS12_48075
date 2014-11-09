@@ -6,7 +6,7 @@ include ('./includes/header.php');
     <ul>
         <li><a href="./Hmwk/Assignment1/Script1.01.php" target="frame">Asmnt 1</a></li>
         <li><a href="./Hmwk/Assignment2/input.html" target="frame">Asmnt 2</a></li>
-        <li><a href="Hmwk/Assignment3/flowcharts/flowchartdisplay.html" target="frame">Asmnt 3</a></li>
+        <li><a href="./Hmwk/Assignment3/flowcharts/flowchartdisplay.html" target="frame">Asmnt 3</a></li>
         <li><a href="./Hmwk/Assignment4/EMBandNoArray.php" target="frame">Asmnt 4</a></li>
         <li><a href="./Hmwk/Assignment5/SavingsTableForm.html" target="frame">Asmnt 5</a></li>
         <li><a href="./Hmwk/assignment6_7.html" target="frame">Asmnt 6 &amp; 7</a></li>
