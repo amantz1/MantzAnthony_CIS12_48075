@@ -1,5 +1,5 @@
  <?php #Registration page for Rock and a Hard Place Productions
- 	$page_title="Rock and a Hard Place Registration - Join Today";
+ 	$page_title="Starving Student Roulette - Put your life on the wheel!";
 	include ('./includes/header.php');
 
     // check if form has been submitted
@@ -38,7 +38,7 @@
 	else {
     	$e = mysqli_real_escape_string($dbc,trim($_POST['email']));
 		//prevent users with duplicate email addresses
-		$q = "SELECT user_id FROM am1346043_class_entity_user WHERE email='$e'";
+		$q = "SELECT user_id FROM am1346043_pers_entity_user WHERE email='$e'";
 		if ($r = @mysqli_query($dbc, $q)) {
 			if(mysqli_num_rows($r) != 0) {
 				$errors['e'] = 'Sorry, that email has already been used. Please enter a different email address.';
@@ -47,14 +47,6 @@
 			mysqli_free_result($r);
 		}	
     }
-	
-	// phone
-	if (empty($_POST['phone']) || !preg_match("/^\s*[1-9][0-9]{2}[-][0-9]{3}[-][0-9]{4}\s*$/", $_POST['phone'])) {
-		$errors['ph'] = 'Please enter your phone number in the format 111-111-1111.';
-	}
-	else {
-		$ph = mysqli_real_escape_string($dbc,trim($_POST['phone']));
-	}
 	
     // pass1==pass2
     if (!empty($_POST['pass1'])) {
@@ -75,16 +67,17 @@
     if(empty($errors)) { // if no errors
      
     // build query
-    $q= "INSERT INTO am1346043_class_entity_user (user_firstname,user_lastname,user_email,user_phone,user_password,user_regtime) VALUES ('$fn','$ln','$e','$ph',SHA1('$p'),NOW())";
+    $q= "INSERT INTO am1346043_pers_entity_user (user_firstname,user_lastname,user_email,user_password,user_regtime,user_balance,user_baltime) VALUES ('$fn','$ln','$e',SHA1('$p'),NOW(),'1000',NOW())";
     // $q = "ERROR";
-     
+
     // submit data
-    if($r = mysqli_query($dbc,$q)) {
+	if($r = mysqli_query($dbc,$q)) {
      
     if(mysqli_affected_rows($dbc) == 1) {
     // data successfully inserted
-    $message = "<h2>Thank you!</h2><p>You are about to experience the best in digital audio, video, and web design!</p>";
-    } else {
+    $message = "<h2>Thank you!</h2><p>Because we're such nice guys, we'll start you off with $1000! Don't spend it all in one place.</p>";
+    }
+	else {
     // error - data not inserted
     $message = "<h2>System Error</h2><p class='error'>Your information could not be added to our database.<br />We apologize for any inconvenience, please <a href='javascript:history.back()'>try again</a>.</p>";
     $message .= '<p><span class="content-caption">Debugging information</span>Error message: <br />'.mysqli_error($dbc).'<br /><br />Query: <br />'. $q .'</p>';
@@ -92,9 +85,10 @@
     // free result set -- not needed because insert statement returns boolean value
     //mysqli_free_result($r);
      
-    } else {
+    }
+	else {
     //query unsuccessful
-    $message = '<h2>Error</h2><p class="error-message error">There was an error accessing the database. Please try again later.</p>';	
+    	$message = '<h2>Error</h2><p class="error-message error">There was an error accessing the database. Please try again later.</p>';	
     }
     //disconnect from db
 		mysqli_close($dbc);
@@ -126,11 +120,6 @@
     <label for='ln'>Last Name: </label>
     <input type="text" id='ln' name="last_name" size="15" maxlength="40" value="<?php if (isset($_POST['last_name'])) echo $_POST['last_name']; ?>" />
     <?php echo (isset($errors['ln']))?'<span class="error">'.$errors['ln'].'</span>' : ''; ?></p>
-    <p>
-    <label for='ph'>Phone Number: </label>
-    <input type="text" id='ph' name="phone" size="20" maxlength="12" value="<?php if (isset($_POST['phone'])) echo $_POST['phone']; ?>" />
-    <?php echo (isset($errors['ph']))?'<span class="error">'.$errors['ph'].'</span>' : ''; ?>
-    </p>
     <p>
     <label for='e'>Email Address: </label>
     <input type="text" id='e' name="email" size="20" maxlength="60" value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>" />
