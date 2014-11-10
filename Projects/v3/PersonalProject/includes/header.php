@@ -16,7 +16,8 @@
         	<li><a href="./register.php" target="_self">Register</a></li>			
         	<li>Login</li>			
         	<li>Play</li>
-            <li>Stats</li>			
+            <li>Stats</li>
+            <li><a href="./admin.php" target="_self">Admin</a></li>			
       	</ul>
     </div>
     <div id="content">
