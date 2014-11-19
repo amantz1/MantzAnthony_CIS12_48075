@@ -4,8 +4,42 @@ $page_title = 'Rock and a Hard Place Productions - ADMIN ONLY';
 include ('./includes/header.php');
 echo '<h1>Registered Users</h1>';
 
+
 require ('../../../mysqli_connect.php');
 
+//Search Form
+	echo '<h3>Search users by first or last name</h3>';
+	echo '<form method="post" action="admin.php?check" id="searchform">';
+	echo '<input type="text" name="name">';
+	echo '<input type="submit" name="submit" value="search">';
+	
+	if(isset($_POST['submit'])){
+		if(isset($_GET['check'])){
+			if(preg_match("/^\s*[A-Za-z]+\s*$/", $_POST['name'])){
+				$name=$_POST['name'];
+				//require ('../../../mysqli_connect.php');
+				$sq= "SELECT user_id, user_firstname, user_lastname FROM am1346043_class_entity_user WHERE user_firstname LIKE '%" . $name . "%' OR user_lastname LIKE '%" . $name . "%'";
+				$sr=mysql_query($sq);
+				// Fetch and print all the records....
+				$bg = '#eeeeee'; 
+				while ($row = mysqli_fetch_array($sr, MYSQLI_ASSOC)) {
+					$bg = ($bg=='#eeeeee' ? '#ffffff' : '#eeeeee');
+						echo '<tr bgcolor="' . $bg . '">
+						<td align="left"><a href="edit_user.php?id=' . $row['user_id'] . '">Edit</a></td>
+						<td align="left"><a href="delete_user.php?id=' . $row['user_id'] . '">Delete</a></td>
+						<td align="left">' . $row['user_lastname'] . '</td>
+						<td align="left">' . $row['user_firstname'] . '</td>
+						<td align="left">' . $row['user_email'] . '</td>
+						<td align="left">' . $row['dr'] . '</td>
+					</tr>
+					';
+				} // End of WHILE loop.
+
+			}
+		}
+	}
+
+/*
 // Number of records to show per page:
 $display = 20;
 
@@ -117,6 +151,6 @@ if ($pages > 1) {
 	echo '</p>'; // Close the paragraph.
 	
 } // End of links section.
-	
+*/	
 include ('./includes/footer.php');
 ?>
