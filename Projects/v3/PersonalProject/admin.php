@@ -6,6 +6,14 @@ echo '<h1>Registered Users</h1>';
 
 require ('../../../mysqli_connect.php');
 
+//Search Form
+	echo '<h3>Search users by first or last name</h3>';
+	echo '<form method="post" action="admin.php?check" id="searchform">';
+	echo '<input type="text" name="name">';
+	echo '<input type="submit" name="submit" value="search">';
+	echo '<button><a href="./admin.php"></a>View All</button>';
+	echo '</form>';
+
 // Number of records to show per page:
 $display = 20;
 
@@ -58,9 +66,19 @@ switch ($sort) {
 }
 	
 // Define the query:
+if(isset($_POST['submit'])){
+	if(isset($_GET['check'])){
+		if(preg_match("/^\s*[A-Za-z]+\s*$/", $_POST['name'])){
+			$name=$_POST['name'];
+			$q= "SELECT user_lastname, user_firstname, user_email, DATE_FORMAT(user_regtime, '%M %d, %Y %H:%i:%s') AS dr, user_balance, user_id FROM am1346043_pers_entity_user WHERE user_firstname LIKE '%" . $name . "%' OR user_lastname LIKE '%" . $name . "%' ORDER BY $order_by LIMIT $start, $display";
+			$r=mysqli_query($dbc, $q);
+		}
+	}
+}
+else {
 $q = "SELECT user_lastname, user_firstname, user_email, DATE_FORMAT(user_regtime, '%M %d, %Y %H:%i:%s') AS dr, user_balance, user_id FROM am1346043_pers_entity_user ORDER BY $order_by LIMIT $start, $display";		
 $r = @mysqli_query ($dbc, $q); // Run the query.
-
+}
 // Table header:
 echo '<table align="center" cellspacing="0" cellpadding="5" width="75%">
 <tr>

@@ -12,34 +12,9 @@ require ('../../../mysqli_connect.php');
 	echo '<form method="post" action="admin.php?check" id="searchform">';
 	echo '<input type="text" name="name">';
 	echo '<input type="submit" name="submit" value="search">';
-	
-	if(isset($_POST['submit'])){
-		if(isset($_GET['check'])){
-			if(preg_match("/^\s*[A-Za-z]+\s*$/", $_POST['name'])){
-				$name=$_POST['name'];
-				//require ('../../../mysqli_connect.php');
-				$sq= "SELECT user_id, user_firstname, user_lastname FROM am1346043_class_entity_user WHERE user_firstname LIKE '%" . $name . "%' OR user_lastname LIKE '%" . $name . "%'";
-				$sr=mysql_query($sq);
-				// Fetch and print all the records....
-				$bg = '#eeeeee'; 
-				while ($row = mysqli_fetch_array($sr, MYSQLI_ASSOC)) {
-					$bg = ($bg=='#eeeeee' ? '#ffffff' : '#eeeeee');
-						echo '<tr bgcolor="' . $bg . '">
-						<td align="left"><a href="edit_user.php?id=' . $row['user_id'] . '">Edit</a></td>
-						<td align="left"><a href="delete_user.php?id=' . $row['user_id'] . '">Delete</a></td>
-						<td align="left">' . $row['user_lastname'] . '</td>
-						<td align="left">' . $row['user_firstname'] . '</td>
-						<td align="left">' . $row['user_email'] . '</td>
-						<td align="left">' . $row['dr'] . '</td>
-					</tr>
-					';
-				} // End of WHILE loop.
+	echo '<button><a href="./admin.php"></a>View All</button>';
+	echo '</form>';
 
-			}
-		}
-	}
-
-/*
 // Number of records to show per page:
 $display = 20;
 
@@ -89,9 +64,19 @@ switch ($sort) {
 }
 	
 // Define the query:
+if(isset($_POST['submit'])){
+	if(isset($_GET['check'])){
+		if(preg_match("/^\s*[A-Za-z]+\s*$/", $_POST['name'])){
+			$name=$_POST['name'];
+			$q= "SELECT user_lastname, user_firstname, user_email, DATE_FORMAT(user_regtime, '%M %d, %Y %H:%i:%s') AS dr, user_id FROM am1346043_class_entity_user WHERE user_firstname LIKE '%" . $name . "%' OR user_lastname LIKE '%" . $name . "%' ORDER BY $order_by LIMIT $start, $display";
+			$r=mysqli_query($dbc, $q);
+		}
+	}
+}
+else {
 $q = "SELECT user_lastname, user_firstname, user_email, DATE_FORMAT(user_regtime, '%M %d, %Y %H:%i:%s') AS dr, user_id FROM am1346043_class_entity_user ORDER BY $order_by LIMIT $start, $display";		
 $r = @mysqli_query ($dbc, $q); // Run the query.
-
+}
 // Table header:
 echo '<table align="center" cellspacing="0" cellpadding="5" width="75%">
 <tr>
@@ -151,6 +136,6 @@ if ($pages > 1) {
 	echo '</p>'; // Close the paragraph.
 	
 } // End of links section.
-*/	
+
 include ('./includes/footer.php');
 ?>
