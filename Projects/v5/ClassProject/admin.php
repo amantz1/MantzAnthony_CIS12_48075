@@ -1,8 +1,9 @@
 <?php # Admin page for Rock and a Hard Place Productions
 
-$page_title = 'Starving Student Roulette - ADMIN ONLY';
+$page_title = 'Rock and a Hard Place Productions - ADMIN ONLY';
 include ('./includes/header.php');
 echo '<h1>Registered Users</h1>';
+
 
 require ('../../../mysqli_connect.php');
 
@@ -11,8 +12,9 @@ require ('../../../mysqli_connect.php');
 	echo '<form method="post" action="admin.php?check" id="searchform">';
 	echo '<input type="text" name="name">';
 	echo '<input type="submit" name="submit" value="search">';
+	//echo '<input type="reset">' ;
 	echo '<button><a href="./admin.php"></a>View All</button>';
-	echo '</form>';
+
 
 // Number of records to show per page:
 $display = 20;
@@ -22,7 +24,7 @@ if (isset($_GET['p']) && is_numeric($_GET['p'])) { // Already been determined.
 	$pages = $_GET['p'];
 } else { // Need to determine.
  	// Count the number of records:
-	$q = "SELECT COUNT(user_id) FROM am1346043_pers_entity_user";
+	$q = "SELECT COUNT(user_id) FROM am1346043_class_entity_user";
 	$r = @mysqli_query ($dbc, $q);
 	$row = @mysqli_fetch_array ($r, MYSQLI_NUM);
 	$records = $row[0];
@@ -56,9 +58,6 @@ switch ($sort) {
 	case 'rd':
 		$order_by = 'user_regtime ASC';
 		break;
-	case 'bal':
-		$order_by = 'user_balance ASC';
-		break;
 	default:
 		$order_by = 'user_regtime ASC';
 		$sort = 'rd';
@@ -70,13 +69,13 @@ if(isset($_POST['submit'])){
 	if(isset($_GET['check'])){
 		if(preg_match("/^\s*[A-Za-z]+\s*$/", $_POST['name'])){
 			$name=$_POST['name'];
-			$q= "SELECT user_lastname, user_firstname, user_email, DATE_FORMAT(user_regtime, '%M %d, %Y %H:%i:%s') AS dr, user_balance, user_id FROM am1346043_pers_entity_user WHERE user_firstname LIKE '%" . $name . "%' OR user_lastname LIKE '%" . $name . "%' ORDER BY $order_by LIMIT $start, $display";
+			$q= "SELECT user_lastname, user_firstname, user_email, DATE_FORMAT(user_regtime, '%M %d, %Y %H:%i:%s') AS dr, user_id FROM am1346043_class_entity_user WHERE user_firstname LIKE '%" . $name . "%' OR user_lastname LIKE '%" . $name . "%' ORDER BY $order_by LIMIT $start, $display";
 			$r=mysqli_query($dbc, $q);
 		}
 	}
 }
 else {
-$q = "SELECT user_lastname, user_firstname, user_email, DATE_FORMAT(user_regtime, '%M %d, %Y %H:%i:%s') AS dr, user_balance, user_id FROM am1346043_pers_entity_user ORDER BY $order_by LIMIT $start, $display";		
+$q = "SELECT user_lastname, user_firstname, user_email, DATE_FORMAT(user_regtime, '%M %d, %Y %H:%i:%s') AS dr, user_id FROM am1346043_class_entity_user ORDER BY $order_by LIMIT $start, $display";		
 $r = @mysqli_query ($dbc, $q); // Run the query.
 }
 // Table header:
@@ -88,7 +87,6 @@ echo '<table align="center" cellspacing="0" cellpadding="5" width="75%">
 	<td align="left"><b><a href="admin.php?sort=fn">First Name</a></b></td>
 	<td align="left"><b>Email</b></td>
 	<td align="left"><b><a href="admin.php?sort=rd">Last Update</a></b></td>
-	<td align="left"><b><a href="admin.php?sort=bal">Balance</a></b></td>
 </tr>
 ';
 
@@ -103,7 +101,6 @@ while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
 		<td align="left">' . $row['user_firstname'] . '</td>
 		<td align="left">' . $row['user_email'] . '</td>
 		<td align="left">' . $row['dr'] . '</td>
-		<td align="left">$' . $row['user_balance'] . '</td>
 	</tr>
 	';
 } // End of WHILE loop.
@@ -140,6 +137,6 @@ if ($pages > 1) {
 	echo '</p>'; // Close the paragraph.
 	
 } // End of links section.
-	
+
 include ('./includes/footer.php');
 ?>
