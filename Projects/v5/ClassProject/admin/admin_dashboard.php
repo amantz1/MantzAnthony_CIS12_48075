@@ -1,11 +1,20 @@
 <?php # Admin page for Rock and a Hard Place Productions
 
+session_start();
+
+if (!isset($_SESSION['admin_id'])){
+	require ('./includes/login_functions.php');
+	redirect_user();
+}
+
+
 $page_title = 'Rock and a Hard Place Productions - ADMIN ONLY';
 include ('./includes/header.php');
+echo "<p>You are logged in as {$_SESSION['admin_firstname']}.</p>";
+
 echo '<h1>Registered Users</h1>';
 
-
-require ('../../../mysqli_connect.php');
+require ('../../../../mysqli_connect.php');
 
 //Search Form
 	echo '<h3>Search users by first or last name</h3>';

@@ -6,7 +6,7 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
      
     // connect to db
-	require ('../../../mysqli_connect.php');
+	require ('../../../../mysqli_connect.php');
      
     // create error array
     $errors = array();

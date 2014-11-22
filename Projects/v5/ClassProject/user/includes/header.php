@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title><?php echo $page_title; ?></title>
-<link rel="stylesheet" type="text/css" href="./includes/styles.css"
+<link rel="stylesheet" type="text/css" href="../includes/styles.css"
 </head>
 
 <body>
@@ -12,17 +12,15 @@
     </div>
     <div id="nav">
     	<ul>
-        	<li><a href="./index.php" target="_self">Home</a></li>			
+        	<li><a href="../index.php" target="_self">Home</a></li>			
         	<li>Services</li>			
-        	<li><a href="./user/register.php" target="_self">Register</a></li>			
         	<li><?php if ((isset($_COOKIE['user_id'])) && (basename($_SERVER['PHP_SELF']) != 'logout.php')){
-				echo '<a href="./user/logout.php">Logout</a>';
+				echo '<a href="./logout.php">Logout</a>';
 			} else {
-				echo '<a href="./user/login.php">Login</a>';
+				echo '<a href="./login.php">Login</a>';
 			}
 			?></li>			
         	<li>Cart</li>
-            <li><a href="./admin/admin.php" target="_self">Admin</a></li>			
       	</ul>
     </div>
     <div id="content">

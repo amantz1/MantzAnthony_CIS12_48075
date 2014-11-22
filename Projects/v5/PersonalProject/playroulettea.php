@@ -49,7 +49,7 @@ a:hover {color:#000}
 	<button class="chips" id="25" >$25.00</button>
 	<button class="chips" id="100" >$100.00</button>
     
-    <p>Your current bet denomination is $<script>getBetDen();</script></p>
+    <p>Your current bet denomination is $<span id="denom"></span></p>
     
 	<p>Choose a space to bet on:</p>
     <a class="addBet" name="11">su11</a>

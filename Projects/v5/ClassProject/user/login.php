@@ -2,7 +2,7 @@
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	require ('./includes/login_functions.php');
-	require ('../../../mysqli_connect.php');
+	require ('../../../../mysqli_connect.php');
 	list ($check, $data) = check_login($dbc, $_POST['email'], $_POST['pass']);
 	if ($check) {
 		setcookie ('user_id', $data['user_id'], time()+3600, '/', '', 0, 0);
