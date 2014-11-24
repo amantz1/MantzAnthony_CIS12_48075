@@ -1,4 +1,4 @@
-<?php #Functions for use in Rock and a Hard Place Productions User Login
+<?php #Functions for use in Rock and a Hard Place Productions Admin Login
 
 function redirect_user ($page = '../index.php'){
 	$url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']);

@@ -1,4 +1,4 @@
-<?php #Login page to be used in conjunctino with admin_login.php
+<?php #Login page to be used in conjunctino with admin_login.php for Rock and a Hard Place Productions
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	require ('./includes/login_functions.php');

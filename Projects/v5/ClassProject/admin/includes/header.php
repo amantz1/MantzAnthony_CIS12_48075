@@ -1,3 +1,4 @@
+<?php #Header for Rock and a Hard Place Productions - ADMIN Section?>
 <!doctype html>
 <html>
 <head>
@@ -16,10 +17,10 @@
         	<li><?php if (isset($_SESSION['admin_id'])){
 				echo '<a href="./logout.php">Logout</a>';
 			} else {
-				echo '<a href="./login.php">Login</a>';
+				echo '<a href="./admin.php">Login</a>';
 			}
 			?></li>			
-            <li><a href="./admin.php" target="_self">Admin</a></li>			
       	</ul>
     </div>
     <div id="content">
+    

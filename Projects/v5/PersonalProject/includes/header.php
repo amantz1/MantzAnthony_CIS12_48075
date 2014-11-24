@@ -1,3 +1,5 @@
+<?php #Top level header for Starving Student Roulette?>
+
 <!doctype html>
 <html>
 <head>
@@ -13,12 +15,14 @@
     <div id="nav">
     	<ul>
         	<li><a href="./index.php" target="_self">Home</a></li>			
-        	<li><a href="./register.php" target="_self">Register</a></li>			
-        	<li>Login</li>			
-        	<li><a href="../playroulette.php">Play</li>
-            <li>Stats</li>
-            <li><a href="./admin.php" target="_self">Admin</a></li>	
-            <li><a href="./design/betPrototype.php" target="new">GameTestOnly</a></li>		
+        	<li><a href="./player/register.php" target="_self">Register</a></li>			
+        	<li><?php if ((isset($_COOKIE['user_id'])) && (basename($_SERVER['PHP_SELF']) != 'logout.php')){
+				echo '<a href="./player/logout.php">Logout</a>';
+			} else {
+				echo '<a href="./player/login.php">Login</a>';
+			}
+			?></li>			
+            <li><a href="./admin/admin.php" target="_self">Admin</a></li>	
       	</ul>
     </div>
     <div id="content">

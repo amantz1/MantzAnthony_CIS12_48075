@@ -1,6 +1,6 @@
-<?php # Script 10.3 - edit_user.php
+<?php # ADMIN USE- Edit a record on Rock and a Hard Place Productions
 // This page is for editing a user record.
-// This page is accessed through view_users.php.
+// This page is accessed through admin_dashboard.php.
 
 $page_title = 'Edit a User';
 include ('./includes/header.php');

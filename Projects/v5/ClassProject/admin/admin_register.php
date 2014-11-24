@@ -1,4 +1,4 @@
- <?php #Registration page for Rock and a Hard Place Productions
+ <?php #Admin Registration page for Rock and a Hard Place Productions
  	$page_title="Rock and a Hard Place Registration - Join Today";
 	include ('./includes/header.php');
 

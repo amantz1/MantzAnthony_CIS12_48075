@@ -1,4 +1,4 @@
- <?php #Registration page for Rock and a Hard Place Productions
+ <?php #User Registration page for Rock and a Hard Place Productions
  	$page_title="Rock and a Hard Place Registration - Join Today";
 	include ('./includes/header.php');
 
@@ -83,7 +83,7 @@
      
     if(mysqli_affected_rows($dbc) == 1) {
     // data successfully inserted
-    $message = "<h2>Thank you!</h2><p>You are about to experience the best in digital audio, video, and web design!</p>";
+    $message = '<h2>Thank you for registering with Rock and a Hard Place Productions!</h2><p>You are about to experience the best in digital audio, video, and web design! Please <a href="./login.php">log in here</a></p>';
     } else {
     // error - data not inserted
     $message = "<h2>System Error</h2><p class='error'>Your information could not be added to our database.<br />We apologize for any inconvenience, please <a href='javascript:history.back()'>try again</a>.</p>";

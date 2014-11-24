@@ -1,6 +1,6 @@
 <?php # ADMIN USE ONLY - Rock and a Hard Place Productions
 // This page is for deleting a user record.
-// This page is accessed through view_users.php.
+// This page is accessed through admin dashboard.php.
 
 $page_title = 'Delete a User';
 include ('./includes/header.php');
