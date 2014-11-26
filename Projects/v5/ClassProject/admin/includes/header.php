@@ -1,10 +1,12 @@
-<?php #Header for Rock and a Hard Place Productions - ADMIN Section?>
+<?php #Header for Rock and a Hard Place Productions - ADMIN Section
+session_start();
+?>
 <!doctype html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title><?php echo $page_title; ?></title>
-<link rel="stylesheet" type="text/css" href="../includes/styles.css"
+<link rel="stylesheet" type="text/css" href="../includes/styles.css">
 </head>
 
 <body>
@@ -19,7 +21,8 @@
 			} else {
 				echo '<a href="./admin.php">Login</a>';
 			}
-			?></li>			
+			?></li>
+            <li><a href="./admin_dashboard.php" target="_self">Admin</a></li>		
       	</ul>
     </div>
     <div id="content">
