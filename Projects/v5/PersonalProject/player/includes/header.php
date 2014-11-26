@@ -22,7 +22,12 @@
 				echo '<a href="./login.php">Login</a>';
 			}
 			?></li>			
-        	<li><a href="../game/playroulette.php">Play</a></li>
+            <li><?php if (!isset($_COOKIE['user_id'])){
+				echo '<a href="./login.php">Play</a>';
+			} else {
+				echo '<a href="../game/playroulette.php">Play</a>';
+			}
+			?></li>
             <li>Stats</li>
       	</ul>
     </div>

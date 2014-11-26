@@ -21,7 +21,13 @@
 			} else {
 				echo '<a href="./player/login.php">Login</a>';
 			}
-			?></li>			
+			?></li>
+            <li><?php if (!isset($_COOKIE['user_id'])){
+				echo '<a href="./player/login.php">Play</a>';
+			} else {
+				echo '<a href="./game/playroulette.php">Play</a>';
+			}
+			?></li>
             <li><a href="./admin/admin.php" target="_self">Admin</a></li>	
       	</ul>
     </div>
