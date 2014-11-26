@@ -1,4 +1,5 @@
-<?php #Header for top level Rock and a Hard Place Productions?>
+<?php #Header for top level Rock and a Hard Place Productions
+session_start();?>
 <!doctype html>
 <html>
 <head>
@@ -28,7 +29,6 @@
 				echo '<a href="./user/login.php">Cart</a>';
 			}
 			?></li>			
-            <li><a href="./admin/admin.php" target="_self">Admin</a></li>			
       	</ul>
     </div>
     <div id="content">

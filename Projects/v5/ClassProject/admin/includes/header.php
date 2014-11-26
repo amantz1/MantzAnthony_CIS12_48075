@@ -1,6 +1,4 @@
-<?php #Header for Rock and a Hard Place Productions - ADMIN Section
-session_start();
-?>
+<?php #Header for Rock and a Hard Place Productions - ADMIN Section?>
 <!doctype html>
 <html>
 <head>
@@ -22,7 +20,7 @@ session_start();
 				echo '<a href="./admin.php">Login</a>';
 			}
 			?></li>
-            <li><a href="./admin_dashboard.php" target="_self">Admin</a></li>		
+            <li><a href="./admin_dashboard.php" target="_self">Admin Dashboard</a></li>		
       	</ul>
     </div>
     <div id="content">

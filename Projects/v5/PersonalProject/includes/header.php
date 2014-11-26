@@ -28,7 +28,6 @@
 				echo '<a href="./game/playroulette.php">Play</a>';
 			}
 			?></li>
-            <li><a href="./admin/admin.php" target="_self">Admin</a></li>	
       	</ul>
     </div>
     <div id="content">

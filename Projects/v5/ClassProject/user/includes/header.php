@@ -15,6 +15,7 @@
     	<ul>
         	<li><a href="../index.php" target="_self">Home</a></li>			
         	<li><a href="../services.php" target="_self">Services</li>			
+        	<li><a href="./register.php" target="_self">Register</a></li>			
         	<li><?php if ((isset($_COOKIE['user_id'])) && (basename($_SERVER['PHP_SELF']) != 'logout.php')){
 				echo '<a href="./logout.php">Logout</a>';
 			} else {

@@ -2,13 +2,6 @@
 // This page is for editing a user record.
 // This page is accessed through view_users.php.
 
-session_start();
-
-if (!isset($_SESSION['admin_id'])){
-	require ('./includes/login_functions.php');
-	redirect_user();
-}
-
 $page_title = 'Edit a User';
 include ('./includes/header.php');
 echo '<h1>Edit a User</h1>';
@@ -91,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // Always show the form...
 
 // Retrieve the user's information:
-$q = "SELECT user_firstname, user_lastname, user_email FROM am1346043_class_entity_user WHERE user_id=$id";		
+$q = "SELECT user_firstname, user_lastname, user_email FROM am1346043_pers_entity_user WHERE user_id=$id";		
 $r = @mysqli_query ($dbc, $q);
 
 if (mysqli_num_rows($r) == 1) { // Valid user ID, show the form.

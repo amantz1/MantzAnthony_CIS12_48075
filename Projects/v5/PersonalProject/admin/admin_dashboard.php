@@ -11,6 +11,10 @@ $page_title = 'Starving Student Roulette - ADMIN ONLY';
 include ('./includes/header.php');
 echo '<h1>Registered Users</h1>';
 
+echo "<p>You are logged in as {$_SESSION['admin_firstname']}.</p>";
+
+echo '<h1>Registered Users</h1>';
+
 require ('../../../../mysqli_connect.php');
 
 //Search Form

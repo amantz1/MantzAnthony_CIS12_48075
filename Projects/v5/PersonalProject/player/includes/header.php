@@ -28,7 +28,6 @@
 				echo '<a href="../game/playroulette.php">Play</a>';
 			}
 			?></li>
-            <li>Stats</li>
       	</ul>
     </div>
     <div id="content">
