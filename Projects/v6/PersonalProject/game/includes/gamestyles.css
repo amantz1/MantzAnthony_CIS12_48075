@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/* CSS Document */
+/* Styles for Roulette Game */
+
+body {
+	margin 0 auto 0 auto;
+	background-color: black;
+}
+#gametable {
+	margin-left: auto;
+	margin-right: auto;
+}
+#wheel {
+	float: left;
+	margin-top: 50px;
+}
+#chiprow {
+	position: absolute;
+	left: 600px;
+	top: 600px;
+	z-index: 2;
+}
+#chiprow img {
+	margin-left: 10px;
+}

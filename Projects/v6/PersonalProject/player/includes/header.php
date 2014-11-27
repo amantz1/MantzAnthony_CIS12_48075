@@ -1,4 +1,4 @@
-<?php #Header for ADMIN section of Starving Student Roulette?>
+<?php #Header section for Starving Students Roulette Player area?>
 
 <!doctype html>
 <html>
@@ -15,13 +15,20 @@
     <div id="nav">
     	<ul>
         	<li><a href="../index.php" target="_self">Home</a></li>			
-        	<li><?php if (isset($_SESSION['admin_id'])){
+        	<li><a href="./register.php" target="_self">Register</a></li>			
+        	<li><?php if ((isset($_COOKIE['user_id'])) && (basename($_SERVER['PHP_SELF']) != 'logout.php')){
 				echo '<a href="./logout.php">Logout</a>';
 			} else {
-				echo '<a href="./admin.php">Login</a>';
+				echo '<a href="./login.php">Login</a>';
 			}
 			?></li>			
-            <li><a href="./admin_dashboard.php" target="_self">Admin</a></li>
+            <li><?php if (!isset($_COOKIE['user_id'])){
+				echo '<a href="./login.php">Play</a>';
+			} else {
+				echo '<a href="../game/playroulette.php">Play</a>';
+			}
+			?></li>
       	</ul>
     </div>
     <div id="content">
+    

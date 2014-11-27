@@ -1,13 +1,6 @@
-<?php # ADMIN USE ONLY - Starving Student Roulette
+<?php # ADMIN USE ONLY - Rock and a Hard Place Productions
 // This page is for deleting a user record.
-// This page is accessed through view_users.php.
-
-session_start();
-
-if (!isset($_SESSION['admin_id'])){
-	require ('./includes/login_functions.php');
-	redirect_user();
-}
+// This page is accessed through admin dashboard.php.
 
 $page_title = 'Delete a User';
 include ('./includes/header.php');
@@ -51,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 } else { // Show the form.
 
 	// Retrieve the user's information:
-	$q = "SELECT CONCAT(user_lastname, ', ', user_firstname) FROM am1346043_pers_entity_user WHERE user_id=$id";
+	$q = "SELECT CONCAT(user_lastname, ', ', user_firstname) FROM am1346043_class_entity_user WHERE user_id=$id";
 	$r = @mysqli_query ($dbc, $q);
 
 	if (mysqli_num_rows($r) == 1) { // Valid user ID, show the form.

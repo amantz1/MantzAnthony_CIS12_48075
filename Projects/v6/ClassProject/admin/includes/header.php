@@ -1,16 +1,15 @@
-<?php #Header for ADMIN section of Starving Student Roulette?>
-
+<?php #Header for Rock and a Hard Place Productions - ADMIN Section?>
 <!doctype html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title><?php echo $page_title; ?></title>
-<link rel="stylesheet" type="text/css" href="../includes/styles.css"
+<link rel="stylesheet" type="text/css" href="../includes/styles.css">
 </head>
 
 <body>
 	<div id="header">
-    	<h1>Welcome to the future home of <em>Starving Student Roulette!</em></h1>
+    	<h1>Welcome to the future home of <em>Rock and a Hard Place Productions!</em></h1>
     </div>
     <div id="nav">
     	<ul>
@@ -20,8 +19,9 @@
 			} else {
 				echo '<a href="./admin.php">Login</a>';
 			}
-			?></li>			
-            <li><a href="./admin_dashboard.php" target="_self">Admin</a></li>
+			?></li>
+            <li><a href="./admin_dashboard.php" target="_self">Admin Dashboard</a></li>		
       	</ul>
     </div>
     <div id="content">
+    
