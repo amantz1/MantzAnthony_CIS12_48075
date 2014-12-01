@@ -1,4 +1,6 @@
-<?php #Header for Rock and a Hard Place Productions 0 - Users?>
+<?php #Header for Rock and a Hard Place Productions 0 - Users
+session_start();
+?>
 <!doctype html>
 <html>
 <head>
