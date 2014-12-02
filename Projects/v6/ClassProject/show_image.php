@@ -8,7 +8,7 @@ $name = (!empty($_GET['name'])) ? $_GET['name'] : 'print image';
 if (isset($_GET['image']) && filter_var($_GET['image'], FILTER_VALIDATE_INT, array('min_range' => 1))  ) {
 
 	// Full image path:
-	$image = '/images/' . $_GET['name'];
+	$image = '../images/' . $_GET['name'];
 
 	// Check that the image exists and is a file:
 	if (!file_exists ($image) || (!is_file($image))) {
@@ -18,8 +18,8 @@ if (isset($_GET['image']) && filter_var($_GET['image'], FILTER_VALIDATE_INT, arr
 
 // If there was a problem, use the default image:
 if (!$image) {
-	$image = 'images/unavailable.png';
-	$name = 'unavailable.png';
+	$image = '../images/error.gif';
+	$name = 'error.gif';
 }
 
 // Get the image information:
