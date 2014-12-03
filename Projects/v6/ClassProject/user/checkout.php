@@ -15,8 +15,13 @@ require ('../mysqli_connect.php'); // Connect to the database.
 // Turn autocommit off:
 mysqli_autocommit($dbc, FALSE);
 
+//-----Continue from this point after database tables are rewritten---------
+
+
+
+
 // Add the order to the orders table...
-$q = "INSERT INTO orders (customer_id, total) VALUES ($cid, $total)";
+$q = "INSERT INTO am1346043_class_entity_invoice (user_id, total) VALUES ($cid, $total)";
 $r = mysqli_query($dbc, $q);
 if (mysqli_affected_rows($dbc) == 1) {
 

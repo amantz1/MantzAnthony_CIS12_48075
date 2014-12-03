@@ -4,13 +4,29 @@
 	//Connect to database
 	require ('../../../../mysqli_connect.php');
 
-	/*//This section fills the xref_invserv table and echoes the results
-	$q="INSERT INTO am1346043_class_xref_invserv(invoice_id, service_id, invserv_qty) VALUES ";
-	$rows=5000;
+	//This section fills the xref_invserv table and echoes the results
+	$q="INSERT INTO am1346043_class_xref_invserv(invoice_id, service_id, service_qty, service_price) VALUES ";
+	$rows=1500;
 	for($i=1;$i<=$rows;$i++){
-		$q.="('".rand(1,2001)."',";
-		$q.="'".rand(1,23)."',";
-		$q.="'".rand(1,12)."')";
+		$sid=rand(1,14);
+		if ($sid==1){$p=100;}
+		else if ($sid==2){$p=750;}
+		else if ($sid==3){$p=4725;}
+		else if ($sid==4){$p=18000;}
+		else if ($sid==5){$p=750;}
+		else if ($sid==6){$p=400;}
+		else if ($sid==7){$p=40;}
+		else if ($sid==8){$p=320;}
+		else if ($sid==9){$p=150;}
+		else if ($sid==10){$p=1200;}
+		else if ($sid==11){$p=40;}
+		else if ($sid==12){$p=300;}
+		else if ($sid==13){$p=200;}
+		else if ($sid==14){$p=500;}
+		$q.="('".rand(1,500)."',";
+		$q.="'".$sid."',";
+		$q.="'".rand(1,8)."',";
+		$q.="'".$p."')";
 		if($i!=$rows)$q.=",";
 	}
 		$r=@mysqli_query ($dbc, $q);
@@ -21,17 +37,17 @@
 		echo '<p>'.mysqli_error($dbc).'</p>';
 	}	
 	//Retrieve tables
-	$q="SELECT invserv_id AS isi, invoice_id AS ii, service_id AS si, invserv_qty AS qty FROM am1346043_class_xref_invserv";
+	$q="SELECT invserv_id AS isi, invoice_id AS ii, service_id AS si, service_qty AS qty, service_price FROM am1346043_class_xref_invserv";
 	$r=@mysqli_query($dbc, $q);
 	if ($r){
 		echo '<table><tr><th>isi</th><th>ii</th><th>si</th><th>qty</th></tr>';
 		while ($row=mysqli_fetch_array($r, MYSQLI_BOTH)){
-			echo '<tr><td>'.$row['isi'].'</td><td>'.$row['ii'].'</td><td>'.$row['si'].'</td><td>'.$row['qty'].'</td></tr>';
+			echo '<tr><td>'.$row['isi'].'</td><td>'.$row['ii'].'</td><td>'.$row['si'].'</td><td>'.$row['qty'].'</td><td>'.$row['service_price'].'</td></tr>';
 		}
 	}else {
 		echo '<p>'.mysqli_error($dbc).'</p>';
 	}
-	*/
+	
 	/*
 	//**********This section fills the entity_user table and echoes the results
 	$q="INSERT INTO am1346043_class_entity_user(user_email, user_password, user_firstname, user_lastname, user_phone, user_regtime) VALUES ";
@@ -63,7 +79,8 @@
 	else{
 		echo '<p>'.mysqli_error($dbc).'</p>';
 	}
-	*/	
+	*/
+	/*	
 	//Retrieve tables
 	$q="SELECT user_id AS ui, user_email AS email, user_password AS pass, user_firstname AS fn, user_lastname AS ln, user_phone AS ph, user_regtime AS time FROM am1346043_class_entity_user";
 	$r=@mysqli_query($dbc, $q);
@@ -75,8 +92,20 @@
 	}else {
 		echo '<p>'.mysqli_error($dbc).'</p>';
 	}
-	
-	/*
+	*/
+/*	
+	$q="SELECT invoice_id, service_qty, service_price FROM am1346043_class_xref_invserv ORDER BY invoice_id ASC";
+	$r=@mysqli_query($dbc, $q);
+	if ($r){
+		while ($row=mysqli_fetch_array($r, MYSQLI_BOTH)){
+			echo '<p>'.$row['invoice_id'].'<br/>'.$row['service_qty'].'<br/>'.$row['service_price'].'</p>';
+		}
+	}
+	else {
+		echo mysqli_error($dbc);
+	}
+	*/
+/*	
 	//**********This section fills the entity_invoice table and echoes the results
 	function unixToMySQL($timestamp){
 		return date('Y-m-d H:i:s', $timestamp);
@@ -111,5 +140,5 @@
 		echo '<p>'.mysqli_error($dbc).'</p>';
 	}
 	//**********End Section
-	*/
+*/	
 ?>
