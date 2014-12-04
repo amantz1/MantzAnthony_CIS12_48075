@@ -40,10 +40,10 @@ if (!empty($_SESSION['cart'])) {
 	echo '<form action="cart.php" method="post">
 	<table border="0" width="90%" cellspacing="3" cellpadding="3" align="center">
 	<tr>
-		<td align="left" width="40%"><b>Service</b></td>
-		<td align="right" width="20%"><b>Price</b></td>
-		<td align="center" width="20%"><b>Qty</b></td>
-		<td align="right" width="20%"><b>Total Price</b></td>
+		<td align="left" width="20%"><b>Service</b></td>
+		<td align="right" width="10%"><b>Price</b></td>
+		<td align="center" width="10%"><b>Qty</b></td>
+		<td align="right" width="10%"><b>Total Price</b></td>
 	</tr>
 	';
 
@@ -52,13 +52,13 @@ if (!empty($_SESSION['cart'])) {
 	while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC)) {
 	
 		// Calculate the total and sub-totals.
-		$subtotal = $_SESSION['cart'][$row['service_id']]['quantity'] * $_SESSION['cart'][$row['service_id']]['service_rate'];
+		$subtotal = $_SESSION['cart'][$row['service_id']]['quantity'] * $_SESSION['cart'][$row['service_id']]['service_price'];
 		$total += $subtotal;
 		
 		// Print the row:
 		echo "\t<tr>
 		<td align=\"left\">{$row['service_name']}</td>
-		<td align=\"right\">\${$_SESSION['cart'][$row['service_id']]['service_rate']}</td>
+		<td align=\"right\">\${$_SESSION['cart'][$row['service_id']]['service_price']}</td>
 		<td align=\"center\"><input type=\"text\" size=\"3\" name=\"qty[{$row['service_id']}]\" value=\"{$_SESSION['cart'][$row['service_id']]['quantity']}\" /></td>
 		<td align=\"right\">$" . number_format ($subtotal, 2) . "</td>
 		</tr>\n";

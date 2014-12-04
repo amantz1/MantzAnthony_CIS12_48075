@@ -110,24 +110,43 @@
 
 //This section needs to have the order total field added
 
-	
+/*
 	//**********This section fills the entity_invoice table and echoes the results
+	*/
 	function unixToMySQL($timestamp){
 		return date('Y-m-d H:i:s', $timestamp);
 	}
-	$q="INSERT INTO am1346043_class_entity_invoice(user_id, invoice_total, invoice_time) VALUES ";
 	$rows=500;
 	$ti=0;
+	$q="INSERT INTO am1346043_class_entity_invoice(user_id, invoice_total, invoice_time) VALUES ";
+
 	for($i=1;$i<=$rows;$i++){
-		$q.="('".rand(1,1000)."',";
-		//run loop to pull total order here
-		$itq="SELECT service_qty, service_price FROM am1346043_class_xref_invserv WHERE 
-		$t=time()-((300*24*60*60)-$ti);
-		$ut=unixToMySQL($t);
-		$ti+=(19*27*23);
-		$q.="'".$ut."')";
-		if($i!=$rows)$q.=",";	
+		$itq="SELECT invoice_id, service_qty, service_price FROM am1346043_class_xref_invserv AS invserv WHERE invoice_id=$i";
+		$itr=@mysqli_query($dbc, $itq);
+		$row=mysqli_fetch_array($itr, MYSQL_ASSOC);
+		if ($row['invoice_id']!='NULL'){	
+			$ui=rand(1,1000);
+			$q.="('".$ui."',";	
+			$tot=0;
+			if ($row['invoice_id']==$i){ 
+				$sq=$row['service_qty'];
+				$sp=$row['service_price'];
+				$tot+=($sq*$sp);
+			}
+			$q.="'".$tot."',";
+			$t=time()-((300*24*60*60)-$ti);
+			$ut=unixToMySQL($t);
+			$ti+=(19*27*23);
+			$q.="'".$ut."')";
+		}
+		else {
+			$q="('NULL','NULL','NULL')";
+		}
+		if($i!=$rows)$q.=",";
+		
 	}
+		//echo '<p>'.$q.'</p>';	
+
 	$r=@mysqli_query ($dbc, $q);
 	if ($r){
 		echo '<h1>It finally worked</h1>';
@@ -136,16 +155,64 @@
 		echo '<p>'.mysqli_error($dbc).'</p>';
 	}	
 	//Retrieve tables
-	$q="SELECT invoice_id AS ii, user_id AS ui, invoice_time AS it FROM am1346043_class_entity_invoice";
+	$q="SELECT invoice_id AS ii, user_id AS ui, invoice_total as invtot, invoice_time AS it FROM am1346043_class_entity_invoice";
 	$r=@mysqli_query($dbc, $q);
 	if ($r){
 		echo '<table><tr><th>Invoice</th><th>User</th><th>Time</th></tr>';
 		while ($row=mysqli_fetch_array($r, MYSQLI_BOTH)){
-			echo '<tr><td>'.$row['ii'].'</td><td>'.$row['ui'].'</td><td>'.$row['it'].'</td></tr>';
+			echo '<tr><td>'.$row['ii'].'</td><td>'.$row['ui'].'</td><td>'.$row['invtot'].'</td><td>'.$row['it'].'</td></tr>';
+		}
+	}else {
+		echo '<p>'.mysqli_error($dbc).'</p>';
+	}
+	
+	
+	/*
+	function unixToMySQL($timestamp){
+		return date('Y-m-d H:i:s', $timestamp);
+	}
+	$q="INSERT INTO am1346043_class_entity_invoice(user_id, invoice_total, invoice_time) VALUES ";
+	$rows=10;
+	$ti=0;
+	for($i=1;$i<=$rows;$i++){
+		$q.="('".rand(1,1000)."',";
+		
+		//run loop to pull total order here
+		$itq="SELECT invoice_id, service_qty, service_price FROM am1346043_class_xref_invserv AS invserv WHERE invoice_id=$i";
+		$itr=@mysqli_query($dbc, $itq);
+		$tot=0;
+		if ($itr){ $row=mysqli_fetch_array($itr, MYSQL_BOTH);
+			$sq=$row['service_qty'];
+			$sp=$row['service_price'];
+			$tot+=($sq*$sp);
+			echo '<p>'.$row['invoice_id'].'  '.$row['service_qty'].'  '.$row['service_price'].'  '.$tot.'</p>';
+		}
+		$q.="'".$tot."',";
+		$t=time()-((300*24*60*60)-$ti);
+		$ut=unixToMySQL($t);
+		$ti+=(19*27*23);
+		$q.="'".$ut."')";
+		if($i!=$rows)$q.=",";
+		echo '<p>'.$q.'</p>';	
+	}
+//	$r=@mysqli_query ($dbc, $q);
+	if ($r){
+		echo '<h1>It finally worked</h1>';
+	}
+	else{
+		echo '<p>'.mysqli_error($dbc).'</p>';
+	}	
+	//Retrieve tables
+	$q="SELECT invoice_id AS ii, user_id AS ui, invoice_total as invtot invoice_time AS it FROM am1346043_class_entity_invoice";
+	$r=@mysqli_query($dbc, $q);
+	if ($r){
+		echo '<table><tr><th>Invoice</th><th>User</th><th>Time</th></tr>';
+		while ($row=mysqli_fetch_array($r, MYSQLI_BOTH)){
+			echo '<tr><td>'.$row['ii'].'</td><td>'.$row['ui'].'</td><td>'.$row['invtot'].'</td><td>'.$row['it'].'</td></tr>';
 		}
 	}else {
 		echo '<p>'.mysqli_error($dbc).'</p>';
 	}
 	//**********End Section
-
+*/
 ?>

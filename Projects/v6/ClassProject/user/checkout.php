@@ -2,7 +2,7 @@
 
 // Set the page title and include the HTML header:
 $page_title = 'Order Confirmation';
-include ('./includes/header.html');
+include ('./includes/header.php');
 
 // Assume that the customer is logged in and that this page has access to the customer's ID:
 $cid = 1; // Temporary.
@@ -10,7 +10,7 @@ $cid = 1; // Temporary.
 // Assume that this page receives the order total:
 $total = 178.93; // Temporary.
 
-require ('../mysqli_connect.php'); // Connect to the database.
+require ('../../../../mysqli_connect.php'); // Connect to the database.
 
 // Turn autocommit off:
 mysqli_autocommit($dbc, FALSE);
@@ -21,7 +21,7 @@ mysqli_autocommit($dbc, FALSE);
 
 
 // Add the order to the orders table...
-$q = "INSERT INTO am1346043_class_entity_invoice (user_id, total) VALUES ($cid, $total)";
+$q = "INSERT INTO am1346043_class_entity_invoice (user_id, invoice_total, invoice_time) VALUES ($cid, $total, NOW())";
 $r = mysqli_query($dbc, $q);
 if (mysqli_affected_rows($dbc) == 1) {
 
@@ -31,15 +31,15 @@ if (mysqli_affected_rows($dbc) == 1) {
 	// Insert the specific order contents into the database...
 	
 	// Prepare the query:
-	$q = "INSERT INTO order_contents (order_id, print_id, quantity, price) VALUES (?, ?, ?, ?)";
+	$q = "INSERT INTO am1346043_class_xref_invserv (invoice_id, service_id, service_qty, service_price) VALUES (?, ?, ?, ?)";
 	$stmt = mysqli_prepare($dbc, $q);
-	mysqli_stmt_bind_param($stmt, 'iiid', $oid, $pid, $qty, $price);
+	mysqli_stmt_bind_param($stmt, 'iiid', $oid, $sid, $qty, $price);
 	
 	// Execute each query; count the total affected:
 	$affected = 0;
-	foreach ($_SESSION['cart'] as $pid => $item) {
+	foreach ($_SESSION['cart'] as $sid => $item) {
 		$qty = $item['quantity'];
-		$price = $item['price'];
+		$price = $item['service_price'];
 		mysqli_stmt_execute($stmt);
 		$affected += mysqli_stmt_affected_rows($stmt);
 	}
@@ -82,5 +82,5 @@ if (mysqli_affected_rows($dbc) == 1) {
 
 mysqli_close($dbc);
 
-include ('includes/footer.html');
+include ('includes/footer.php');
 ?>

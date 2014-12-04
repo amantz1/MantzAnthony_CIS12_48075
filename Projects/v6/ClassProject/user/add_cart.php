@@ -27,7 +27,7 @@ if (isset ($_GET['sid']) && filter_var($_GET['sid'], FILTER_VALIDATE_INT, array(
 			list($price) = mysqli_fetch_array ($r, MYSQLI_NUM);
 			
 			// Add to the cart:
-			$_SESSION['cart'][$sid] = array ('quantity' => 1, 'service_rate' => $price);
+			$_SESSION['cart'][$sid] = array ('quantity' => 1, 'service_price' => $price);
 
 			// Display a message:
 			echo '<p>The service has been added to your shopping cart.</p>';
