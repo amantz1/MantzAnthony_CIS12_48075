@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery UI Draggable - Revert position</title>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<!--<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>-->
+<!--<script src="./includes/roulettefunc.js"></script>-->
+<script type="text/javascript">
+$(document).ready(function() {
+    function betDenom(){
+		betValue='This worked';
+		document.getElementById('betinfo').innerHTML=betValue;
+	}
+});
+</script>
+<link rel="stylesheet" href="includes/gamestyles.css" type="text/css">
+</head>
+<body>
+<div id="chiprow">
+	<img class="chip" id="chip25c" name="chip25c" src="./images/chip25c.gif" onclick="betDenom()">
+	<img class="chip" id="chip50c" name="chip50c" src="./images/chip50c.gif" onclick=betDenom(.50)>
+	<img class="chip" name="chip1" src="./images/chip1.gif" onClick=betDenom(1)>
+	<img class="chip" name="chip5" src="./images/chip5.gif" onClick=betDenom(5)>
+	<img class="chip" name="chip10" src="./images/chip10.gif">
+	<img class="chip" name="chip25" src="./images/chip25.gif">
+	<img class="chip" name="chip50" src="./images/chip50.gif">
+	<img class="chip" name="chip100" src="./images/chip100.gif">
+</div>
+<!--End Poker chips-->
+<div id="betinfo"></div></body>
+</html>

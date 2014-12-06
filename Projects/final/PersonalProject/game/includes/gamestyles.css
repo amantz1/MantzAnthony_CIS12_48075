@@ -20,6 +20,8 @@ body {
 	top: 600px;
 	z-index: 2;
 }
-#chiprow img {
-	margin-left: 10px;
+#betinfo {
+	background-color: white;
+	width: 80px;
+	height: 20px;
 }
