@@ -6,12 +6,12 @@
 		<td colspan="31"><img src="./images/roulettebetfieldplayable_01.gif" width="800" height="50" alt=""></td>
 	</tr><tr>
 		<td rowspan="10"><img src="./images/roulettebetfieldplayable_02.gif" width="67" height="450" alt=""></td>
-        <td rowspan="2">	<img  src="./images/su00.gif" width="50" height="100" alt="" onClick="betSpot('su00')"></td>		
+        <td rowspan="2">	<img  class="betspot" id="su00" src="./images/su00.gif" width="50" height="100" alt="su00" onClick="betSpot(document.getElementById('su00'),('su00'))"></td>		
         <td>	<img src="./images/roulettebetfieldplayable_04.gif" width="16" height="50" alt=""></td>
-		<td>	<img class="betspot" id="su3" src="./images/su3.gif" width="34" height="50" alt="" onClick="betSpot(document.getElementById('su3'))"></td>
-		<td>	<img class="betspot" id="sp3-6" src="./images/sp3-6.gif" width="16" height="50" alt=""></td>
-		<td>	<img class="betspot" id="su6" src="./images/su6.gif" width="33" height="50" alt=""></td>
-		<td>	<img src="./images/sp6-9.gif" width="17" height="50" alt=""></td>
+		<td>	<img class="betspot" id="su3" src="./images/su3.gif" width="34" height="50" alt="su3" onClick="betSpot(document.getElementById('su3'), ('su3'))"></td>
+		<td>	<img class="betspot" id="sp3-6" src="./images/sp3-6.gif" width="16" height="50" alt="sp3-6" onClick="betSpot(document.getElementById('sp3-6'), ('sp3-6'))"></td>
+		<td>	<img class="betspot" id="su6" src="./images/su6.gif" width="33" height="50" alt="su6" onClick="betSpot(document.getElementById('su6'), ('su6'))"></td>
+		<td>	<img class="betspot" id="sp6-9" src="./images/sp6-9.gif" width="17" height="50" alt="sp6-9" onClick="betSpot(document.getElementById('sp6-9'), ('sp6-9'))"></td>
 		<td>	<img src="./images/su9.gif" width="34" height="50" alt=""></td>
 		<td>	<img src="./images/sp9-12.gif" width="16" height="50" alt=""></td>
 		<td>	<img src="./images/su12.gif" width="34" height="50" alt=""></td>
@@ -238,10 +238,18 @@
 	<img class="chip" id="chip50c" name="chip50c" src="./images/chip50c.gif" onClick=betDenom(.50)>
 	<img class="chip" name="chip1" src="./images/chip1.gif" onClick=betDenom(1)>
 	<img class="chip" name="chip5" src="./images/chip5.gif" onClick=betDenom(5)>
-	<img class="chip" name="chip10" src="./images/chip10.gif">
-	<img class="chip" name="chip25" src="./images/chip25.gif">
-	<img class="chip" name="chip50" src="./images/chip50.gif">
-	<img class="chip" name="chip100" src="./images/chip100.gif">
+	<img class="chip" name="chip10" src="./images/chip10.gif" onClick=betDenom(10)>
+	<img class="chip" name="chip25" src="./images/chip25.gif" onClick=betDenom(25)>
+	<img class="chip" name="chip50" src="./images/chip50.gif" onClick=betDenom(50)>
+	<img class="chip" name="chip100" src="./images/chip100.gif" onClick=betDenom(100)>
 </div>
 <!--End Poker chips-->
+
+<!--Begin Game Info-->
 <div id="betinfo"></div>
+<div id="betloc"></div>
+<div id="betamount"></div>
+<div id="betresult"></div>
+
+<button id="placebet">Place Bet</button>
+<button id="clearcookies" onClick="clearBet();">Play Again</button>
