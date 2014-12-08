@@ -47,6 +47,7 @@ function clearBet(){
 	document.cookie = betLocation;
 	}
 	document.cookie = "betTotal=";
+	location.reload();
 }
 
 

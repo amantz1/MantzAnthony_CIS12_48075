@@ -16,11 +16,7 @@
 
 <img src="../includes/headerimage.jpg">
 <?php
-	include ('includes/bettable.php'); 
-?>
-<a href="../index.php">Exit Game</a>
-
-<?php
+	include ('includes/bettable.php');
 	include ('../player/includes/footer.php');
 ?>
 	
