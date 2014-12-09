@@ -14,12 +14,8 @@ require ('../../../../mysqli_connect.php'); // Connect to the database.
 
 // Turn autocommit off:
 mysqli_autocommit($dbc, FALSE);
-
-//-----Continue from this point after database tables are rewritten---------
-
-
-
-
+$total=$_SESSION['orderTot'];
+$cid=$_COOKIE['user_id'];
 // Add the order to the orders table...
 $q = "INSERT INTO am1346043_class_entity_invoice (user_id, invoice_total, invoice_time) VALUES ($cid, $total, NOW())";
 $r = mysqli_query($dbc, $q);
@@ -31,15 +27,15 @@ if (mysqli_affected_rows($dbc) == 1) {
 	// Insert the specific order contents into the database...
 	
 	// Prepare the query:
-	$q = "INSERT INTO am1346043_class_xref_invserv (invoice_id, service_id, service_qty, service_price) VALUES (?, ?, ?, ?)";
+	$q = "INSERT INTO am1346043_class_xref_invserv (invoice_id, service_id, service_qty) VALUES (?, ?, ?)";
 	$stmt = mysqli_prepare($dbc, $q);
-	mysqli_stmt_bind_param($stmt, 'iiid', $oid, $sid, $qty, $price);
+	mysqli_stmt_bind_param($stmt, 'iii', $oid, $sid, $qty);
 	
 	// Execute each query; count the total affected:
 	$affected = 0;
 	foreach ($_SESSION['cart'] as $sid => $item) {
 		$qty = $item['quantity'];
-		$price = $item['service_price'];
+		//$price = $item['service_price'];
 		mysqli_stmt_execute($stmt);
 		$affected += mysqli_stmt_affected_rows($stmt);
 	}
@@ -55,9 +51,9 @@ if (mysqli_affected_rows($dbc) == 1) {
 		
 		// Clear the cart:
 		unset($_SESSION['cart']);
-		
+		unset($_SESSION['orderTot']);
 		// Message to the customer:
-		echo '<p>Thank you for your order. You will be notified when the items ship.</p>';
+		echo '<p>Thank you. You will be contacted shortly to schedule.</p>';
 		
 		// Send emails and do whatever else.
 	
@@ -65,7 +61,7 @@ if (mysqli_affected_rows($dbc) == 1) {
 	
 		mysqli_rollback($dbc);
 		
-		echo '<p>Your order could not be processed due to a system error. You will be contacted in order to have the problem fixed. We apologize for the inconvenience.</p>';
+		echo '<p>Your order could not be processed due to a system error. You will be contacted in order to have the problem fixed. We apologize for the inconvenience.A</p>';
 		// Send the order information to the administrator.
 		
 	}
@@ -74,7 +70,7 @@ if (mysqli_affected_rows($dbc) == 1) {
 
 	mysqli_rollback($dbc);
 
-	echo '<p>Your order could not be processed due to a system error. You will be contacted in order to have the problem fixed. We apologize for the inconvenience.</p>';
+	echo '<p>Your order could not be processed due to a system error. You will be contacted in order to have the problem fixed. We apologize for the inconvenience.B</p>';
 	
 	// Send the order information to the administrator.
 	

@@ -66,7 +66,7 @@ if (!empty($_SESSION['cart'])) {
 	} // End of the WHILE loop.
 
 	mysqli_close($dbc); // Close the database connection.
-
+	$_SESSION['orderTot']=$total;
 	// Print the total, close the table, and the form:
 	echo '<tr>
 		<td colspan="4" align="right"><b>Total:</b></td>
@@ -75,7 +75,7 @@ if (!empty($_SESSION['cart'])) {
 	</table>
 	<div align="center"><input type="submit" name="submit" value="Update My Cart" /></div>
 	</form><p align="center">Enter a quantity of 0 to remove an item.
-	<br /><br /><a href="checkout.php">Checkout</a></p>';
+	<br /><br /><a href="checkout.php">Checkout</a> or <a href="../services.php">Keep Shopping</a></p>';
 
 } else {
 	echo '<p>Your cart is currently empty.</p>';

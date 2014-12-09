@@ -17,12 +17,13 @@ require ('../../../../mysqli_connect.php');
 if (!isset($_GET['iid'])){echo 'Oops...Epic Fail';}
 else {
 	$inv=$_GET['iid'];
-	$q="SELECT i.invoice_id, i.invoice_total, DATE_FORMAT(i.invoice_time, '%M %d, %Y') AS it, u.user_firstname, u.user_lastname FROM am1346043_class_entity_user AS u, am1346043_class_entity_invoice AS i WHERE i.user_id = u.user_id AND i.invoice_id=$inv";
+	$q="SELECT i.invoice_id, i.invoice_total, DATE_FORMAT(i.invoice_time, '%M %d, %Y') AS it, u.user_firstname, u.user_lastname, u.user_phone FROM am1346043_class_entity_user AS u, am1346043_class_entity_invoice AS i WHERE i.user_id = u.user_id AND i.invoice_id=$inv";
 	$r = @mysqli_query ($dbc, $q);
 	while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
 		echo '<h3>Invoice Number: '.$row['invoice_id'].'</h3>';
 		echo '<h3>Invoice Date: '.$row['it'].'</h3>';
 		echo '<h3>Client: '.$row['user_firstname'].' '.$row['user_lastname'].'</h3>';
+		echo '<h4>Phone: '.$row['user_phone'].'</h4>';
 	}
 		mysqli_free_result ($r);
 
