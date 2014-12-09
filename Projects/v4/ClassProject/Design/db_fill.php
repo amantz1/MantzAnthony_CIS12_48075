@@ -3,13 +3,13 @@
 	
 	//Connect to database
 	require ('../../../../mysqli_connect.php');
-/*
+
 	//This section fills the xref_invserv table and echoes the results
-	$q="INSERT INTO am1346043_class_xref_invserv(invoice_id, service_id, service_qty, service_price) VALUES ";
+	$q="INSERT INTO am1346043_class_xref_invserv(invoice_id, service_id, service_qty) VALUES ";
 	$rows=1500;
 	for($i=1;$i<=$rows;$i++){
 		$sid=rand(1,14);
-		if ($sid==1){$p=100;}
+		/*if ($sid==1){$p=100;}
 		else if ($sid==2){$p=750;}
 		else if ($sid==3){$p=4725;}
 		else if ($sid==4){$p=18000;}
@@ -22,11 +22,10 @@
 		else if ($sid==11){$p=40;}
 		else if ($sid==12){$p=300;}
 		else if ($sid==13){$p=200;}
-		else if ($sid==14){$p=500;}
+		else if ($sid==14){$p=500;}*/
 		$q.="('".rand(1,500)."',";
 		$q.="'".$sid."',";
-		$q.="'".rand(1,8)."',";
-		$q.="'".$p."')";
+		$q.="'".rand(1,8)."')";
 		if($i!=$rows)$q.=",";
 	}
 		$r=@mysqli_query ($dbc, $q);
@@ -39,12 +38,12 @@
 	
 	
 	//Retrieve tables
-	$q="SELECT invserv_id AS isi, invoice_id AS ii, service_id AS si, service_qty AS qty, service_price FROM am1346043_class_xref_invserv";
+	$q="SELECT invserv_id AS isi, invoice_id AS ii, service_id AS si, service_qty AS qty FROM am1346043_class_xref_invserv";
 	$r=@mysqli_query($dbc, $q);
 	if ($r){
 		echo '<table><tr><th>isi</th><th>ii</th><th>si</th><th>qty</th></tr>';
 		while ($row=mysqli_fetch_array($r, MYSQLI_BOTH)){
-			echo '<tr><td>'.$row['isi'].'</td><td>'.$row['ii'].'</td><td>'.$row['si'].'</td><td>'.$row['qty'].'</td><td>'.$row['service_price'].'</td></tr>';
+			echo '<tr><td>'.$row['isi'].'</td><td>'.$row['ii'].'</td><td>'.$row['si'].'</td><td>'.$row['qty'].'</td><td>';
 		}
 	}else {
 		echo '<p>'.mysqli_error($dbc).'</p>';
@@ -112,7 +111,7 @@
 
 /*
 	//**********This section fills the entity_invoice table and echoes the results
-	*/
+	
 	function unixToMySQL($timestamp){
 		return date('Y-m-d H:i:s', $timestamp);
 	}
