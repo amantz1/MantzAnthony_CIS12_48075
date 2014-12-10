@@ -2,9 +2,11 @@
 
  	$page_title="Starving Student Roulette Home - Where you'll leave just as poor as you were when you got here!";
 	include ('./includes/header.php');
-	
-	echo '<h2>This is the future home page. It doesn\'t really do anything yet.</h2>';
-	
+?>	
+<div id="redtext"><h1>Welcome to Starving Student Roulette</h1>
+<h2><a href="player/login.php">Click to login and Play!</a></h2>
+</div>
+<?php
 	include ('./includes/footer.php');
 ?> 
   

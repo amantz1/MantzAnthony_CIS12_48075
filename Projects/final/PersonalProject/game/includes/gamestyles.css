@@ -6,42 +6,78 @@ body {
 	margin 0 auto 0 auto;
 	background-color: black;
 }
+#container {
+	width: 850px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
 #gametable {
 	margin-left: auto;
 	margin-right: auto;
 }
-#wheel {
-	float: left;
-	margin-top: 50px;
+#Table_01{
+	margin-left: auto;
+	margin-right: auto;
 }
 #chiprow {
 	position: absolute;
-	left: 600px;
-	top: 600px;
+	left: 40px;
+	top: 455px;
 	z-index: 2;
 }
+#buttons {
+	position: absolute;
+	top: 465px;
+	right: 100px;
+}
+#gameinfo {
+	background-color: black;
+	border: solid 3px red;
+	width: 813px;
+	height: 85px;
+	position: absolute;
+	color: red;
+	font-size: 1.2em;
+}
 #betinfo {
+	width: 80px;
+	height: 85px;
+	position: absolute;
+	top: 10px;
+	left: 300px;
+}
+/*#betloc { this is for testing only
 	background-color: white;
 	width: 80px;
 	height: 20px;
-}
-#betloc { /*this is for testing only*/
-	background-color: white;
-	width: 80px;
-	height: 20px;
-}
+}*/
 #betamount { 
-	background-color: white;
 	width: 80px;
-	height: 20px;
+	height: 85px;
+	float: left;
+	position: absolute;
+	top: 20px;
+	left: 400px;
 }
 #betresult { 
-	background-color: white;
-	width: 600px;
-	height: 100px;
+	width: 300px;
+	height: 85px;
+	float: left;
+	position: absolute;
+	top: -5px;
+	left: 525px;
 }
 #userinfo { 
-	background-color: white;
 	width: 300px;
 	height: 100px;
+	float: left;
+	position:absolute;
+	top: 5px;
+	left: 15px;
+}
+#footer {
+	position: absolute;
+	top: 800px;
+	left: 200px;
 }

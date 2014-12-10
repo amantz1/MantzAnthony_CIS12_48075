@@ -2,7 +2,6 @@
  
  	$page_title="Starving Student Roulette - Put your life on the wheel!";
 	include ('./includes/header.php');
-
     // check if form has been submitted
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
      
@@ -76,7 +75,8 @@
      
     if(mysqli_affected_rows($dbc) == 1) {
     // data successfully inserted
-    $message = "<h2>Thank you!</h2><p>Because we're such nice guys, we'll start you off with $1000! Don't spend it all in one place.</p>";
+	echo '<div id="redtext">';
+    $message = "<h1>Thank you!</h1><h2>Because we're such nice guys, we'll start you off with $1000! Don't spend it all in one place.</h2></div>";
     }
 	else {
     // error - data not inserted
@@ -109,37 +109,40 @@
     }
 ?>	
 <!--------------------Begin Form------------------------>
-    <h2>New User Registration</h2>
+	<div id="redtext">
+    <h2>New User Registration</h2></div>
     <?php echo (isset($errors['flag']))? $errors['flag'] : ''; ?>
+    <div id="regform">
     <form action="" method="post">
     <p>
     <label for='fn'>First Name: </label>
     <input type="text" id='fn' name="first_name" size="15" maxlength="20" value="<?php if (isset($_POST['first_name'])) echo $_POST['first_name']; ?>" />
-    <?php echo (isset($errors['fn']))?'<span class="error">'.$errors['fn'].'</span>' : ''; ?>
+    <?php echo (isset($errors['fn']))?'<div class="error">'.$errors['fn'].'</div>' : ''; ?>
     </p>
     <p>
     <label for='ln'>Last Name: </label>
     <input type="text" id='ln' name="last_name" size="15" maxlength="40" value="<?php if (isset($_POST['last_name'])) echo $_POST['last_name']; ?>" />
-    <?php echo (isset($errors['ln']))?'<span class="error">'.$errors['ln'].'</span>' : ''; ?></p>
+    <?php echo (isset($errors['ln']))?'<div class="error">'.$errors['ln'].'</div>' : ''; ?></p>
     <p>
     <label for='e'>Email Address: </label>
     <input type="text" id='e' name="email" size="20" maxlength="60" value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>" />
-    <?php echo (isset($errors['e']))?'<span class="error">'.$errors['e'].'</span>' : ''; ?>
+    <?php echo (isset($errors['e']))?'<div class="error">'.$errors['e'].'</div>' : ''; ?>
     </p>
     <p>
     <label for='p1'>Password: </label>
     <input type="password" id='p1' name="pass1" size="10" maxlength="20" value="<?php if (isset($_POST['pass1'])) echo $_POST['pass1']; ?>" />
-    <?php echo (isset($errors['p1']))?'<span class="error">'.$errors['p1'].'</span>' : ''; ?>
+    <?php echo (isset($errors['p1']))?'<div class="error">'.$errors['p1'].'</div>' : ''; ?>
     </p>
     <p>
     <label for='p2'>Confirm Password: </label>
     <input type="password" id='p2' name="pass2" size="10" maxlength="20" value="<?php if (isset($_POST['pass2'])) echo $_POST['pass2']; ?>" />
-    <?php echo (isset($errors['p2']))?'<span class="error">'.$errors['p2'].'</span>' : ''; ?>
+    <?php echo (isset($errors['p2']))?'<div class="error">'.$errors['p2'].'</div>' : ''; ?>
     </p>
     <p>
     <input type="submit" name="submit" value="Register" />
     </p>
     </form>
+    </div>
 <!---------------------End Form------------------------->
 <?php
 	include ('./includes/footer.php');

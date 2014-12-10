@@ -2,7 +2,7 @@
 // Set the page title and include the HTML header:
 $page_title = 'Add to Cart';
 include ('./includes/header.php');
-
+echo '<div id="redtext">';
 if (isset ($_GET['sid']) && filter_var($_GET['sid'], FILTER_VALIDATE_INT, array('min_range' => 1))  ) { // Check for a print ID.
 	$sid = $_GET['sid'];
 
@@ -43,6 +43,6 @@ if (isset ($_GET['sid']) && filter_var($_GET['sid'], FILTER_VALIDATE_INT, array(
 } else { // No print ID.
 	echo '<div align="center">This page has been accessed in error!</div>';
 }
-
+echo '</div>';
 include ('./includes/footer.php');
 ?>

@@ -9,21 +9,21 @@ if (!isset($_SESSION['admin_id'])){
 
 $page_title = 'Starving Student Roulette - ADMIN ONLY';
 include ('./includes/header.php');
-echo '<h1>Registered Users</h1>';
-
+echo '<div id="redtext">';
 echo "<p>You are logged in as {$_SESSION['admin_firstname']}.</p>";
 
 echo '<h1>Registered Users</h1>';
-
+echo '</div>';
 require ('../../../../mysqli_connect.php');
 
 //Search Form
+	echo '<div id="regform">';
 	echo '<h3>Search users by first or last name</h3>';
 	echo '<form method="post" action="admin_dashboard.php?check" id="searchform">';
 	echo '<input type="text" name="name">';
 	echo '<input type="submit" name="submit" value="search">';
 	echo '<button><a href="./admin.php"></a>View All</button>';
-	echo '</form>';
+	echo '</form></div>';
 
 // Number of records to show per page:
 $display = 20;
@@ -91,7 +91,7 @@ $q = "SELECT user_lastname, user_firstname, user_email, DATE_FORMAT(user_regtime
 $r = @mysqli_query ($dbc, $q); // Run the query.
 }
 // Table header:
-echo '<table align="center" cellspacing="0" cellpadding="5" width="75%">
+echo '<table align="center"  width="100%">
 <tr>
 	<td align="left"><b>Edit</b></td>
 	<td align="left"><b>Delete</b></td>

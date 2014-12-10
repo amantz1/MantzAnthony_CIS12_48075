@@ -4,7 +4,7 @@ function betDenom(v){
 	if (betValue==.25){chipFace='25c';}
 	else if (betValue==.50){chipFace='50c';}
 	else chipFace=betValue;
-	document.getElementById('betinfo').innerHTML=betValue;
+	document.getElementById('betinfo').innerHTML='Chip Amount<br />$'+betValue;
 }
 
 function betSpot(element, bl){
@@ -34,7 +34,7 @@ function setBet(){
 	var betLocation="betLocation"+betNum+"="+betLoc;
 	document.cookie = betLocation;
 	betTotal+=betValue;
-	document.getElementById('betamount').innerHTML=betTotal;
+	document.getElementById('betamount').innerHTML='Total Bet<br />$'+betTotal;
 	document.cookie = "betTotal="+betTotal;
 	betNum++;
 }

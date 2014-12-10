@@ -8,7 +8,7 @@ if (!isset($_SESSION['admin_id'])){
 
 $page_title = 'Rock and a Hard Place Productions - ADMIN Dashboard';
 include ('./includes/header.php');
-
+echo '<div id="redtext">';
 echo "<p>Hello {$_SESSION['admin_firstname']}.</p>";
 
 echo '<h2><a href="view_users.php" target="_self">View and Edit Users</a></h2>';

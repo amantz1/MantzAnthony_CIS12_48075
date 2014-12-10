@@ -4,7 +4,7 @@
 
 $page_title = 'Edit a User';
 include ('./includes/header.php');
-echo '<h1>Edit a User</h1>';
+echo '<div id="redtext"><h1>Edit a User</h1></div>';
 
 // Check for a valid user ID, through GET or POST:
 if ( (isset($_GET['id'])) && (is_numeric($_GET['id'])) ) { // From view_users.php
@@ -94,13 +94,13 @@ if (mysqli_num_rows($r) == 1) { // Valid user ID, show the form.
 	$row = mysqli_fetch_array ($r, MYSQLI_NUM);
 	
 	// Create the form:
-	echo '<form action="edit_user.php" method="post">
+	echo '<div id="regform"><form action="edit_user.php" method="post">
 <p>First Name: <input type="text" name="first_name" size="15" maxlength="15" value="' . $row[0] . '" /></p>
 <p>Last Name: <input type="text" name="last_name" size="15" maxlength="30" value="' . $row[1] . '" /></p>
 <p>Email Address: <input type="text" name="email" size="20" maxlength="60" value="' . $row[2] . '"  /> </p>
 <p><input type="submit" name="submit" value="Submit" /></p>
 <input type="hidden" name="id" value="' . $id . '" />
-</form>';
+</form></div>';
 
 } else { // Not a valid user ID.
 	echo '<p class="error">This page has been accessed in error.</p>';

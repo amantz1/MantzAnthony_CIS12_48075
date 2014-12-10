@@ -9,9 +9,9 @@ session_start();?>
 </head>
 
 <body>
+	<div id="container">
 	<div id="header">
-    	<h1>Welcome to the future home of <em>Rock and a Hard Place Productions!</em></h1>
-    </div>
+    <img src="../images/raahppheader.jpg" width="800" height="100" alt=""/> </div>
     <div id="nav">
     	<ul>
         	<li><a href="./index.php" target="_self">Home</a></li>			

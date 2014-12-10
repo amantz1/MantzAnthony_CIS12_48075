@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		setcookie ('user_id', $data['user_id'], time()+3600, '/', '', 0, 0);
 		setcookie ('user_firstname', $data['user_firstname'], time()+3600, '/', '', 0, 0);
 		
-		redirect_user('./account.php');
+		redirect_user('../game/playroulette.php');
 	} else {
 		$errors = $data;
 	}

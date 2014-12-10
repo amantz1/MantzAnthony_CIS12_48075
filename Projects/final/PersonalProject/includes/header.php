@@ -10,8 +10,8 @@
 
 <body>
 	<div id="header">
-    	<h1>Welcome to the future home of <em>Starving Student Roulette!</em></h1>
-    </div>
+    <img src="./includes/headerimage.jpg" width="1200" height="150" alt=""/> </div>
+<div id="container">
     <div id="nav">
     	<ul>
         	<li><a href="./index.php" target="_self">Home</a></li>			

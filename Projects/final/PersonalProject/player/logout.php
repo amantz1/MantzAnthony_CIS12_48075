@@ -9,7 +9,8 @@ if (!isset($_COOKIE['user_id'])){
 }
 $page_title = 'Starving Student Roulette - You have been logged out';
 include ('./includes/header.php');
-echo "<h2>You are now logged out, {$_COOKIE['user_firstname']}!</h2><p>Come back again soon</p>";
+echo '<div id="redtext">';
+echo "<h2>You are now logged out, {$_COOKIE['user_firstname']}!</h2><h2>Come back again soon</h2></div>";
 
 include ('./includes/footer.php');
 

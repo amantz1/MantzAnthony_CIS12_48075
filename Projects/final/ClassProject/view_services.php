@@ -17,7 +17,7 @@ if (isset($_GET['sid']) && filter_var($_GET['sid'], FILTER_VALIDATE_INT, array('
 		// Start the HTML page:
 		$page_title = $row['service_name'];
 		include ('includes/header.php');
-	
+		echo '<div id="redtext">';
 		// Display a header:
 		echo "<div align=\"center\">
 		<h2>{$row['service_name']}</h2>";
@@ -47,7 +47,7 @@ if (!$row) { // Show an error message.
 	include ('./includes/header.php');
 	echo '<div align="center"><h1>Houston, we have a problem!</h1></div>';
 }
-
+echo '</div>';
 // Complete the page:
 include ('./includes/footer.php');
 ?>

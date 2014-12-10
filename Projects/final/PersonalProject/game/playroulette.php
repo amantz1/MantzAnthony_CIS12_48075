@@ -15,6 +15,7 @@
 <body>
 
 <img src="../includes/headerimage.jpg">
+<div id="container">
 <?php
 	include ('includes/bettable.php');
 	include ('../player/includes/footer.php');

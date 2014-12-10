@@ -8,13 +8,14 @@ if (!isset($_SESSION['admin_id'])){
 
 $page_title = 'Rock and a Hard Place Productions - ADMIN ONLY';
 include ('./includes/header.php');
-
+echo '<div id="redtext">';
 echo "<p>Hello {$_SESSION['admin_firstname']}.</p>";
 
 echo '<h1>Registered Users</h1>';
 
 require ('../../../../mysqli_connect.php');
 
+echo '</div><div id="regform">';
 //Search Form
 	echo '<h3>Search users by first or last name</h3>';
 	echo '<form method="post" action="view_users.php?check" id="searchform">';
@@ -22,7 +23,7 @@ require ('../../../../mysqli_connect.php');
 	echo '<input type="submit" name="submit" value="search">';
 	//echo '<input type="reset">' ;
 	echo '<button><a href="./admin.php"></a>View All</button>';
-
+echo '</div>';
 
 // Number of records to show per page:
 $display = 20;
@@ -87,7 +88,7 @@ $q = "SELECT user_lastname, user_firstname, user_email, DATE_FORMAT(user_regtime
 $r = @mysqli_query ($dbc, $q); // Run the query.
 }
 // Table header:
-echo '<table align="center" cellspacing="0" cellpadding="5" width="75%">
+echo '<table align="center" width="100%">
 <tr>
 	<td align="left"><b>Edit</b></td>
 	<td align="left"><b>Delete</b></td>
@@ -95,8 +96,7 @@ echo '<table align="center" cellspacing="0" cellpadding="5" width="75%">
 	<td align="left"><b><a href="view_users.php?sort=fn">First Name</a></b></td>
 	<td align="left"><b>Email</b></td>
 	<td align="left"><b><a href="view_users.php?sort=rd">Last Update</a></b></td>
-</tr>
-';
+</tr>';
 
 // Fetch and print all the records....
 $bg = '#eeeeee'; 

@@ -9,7 +9,7 @@ if (!isset($_COOKIE['user_id'])){
 }
 $page_title = 'Rock and a Hard Place Productions - You have been logged out';
 include ('./includes/header.php');
-echo "<h2>You are now logged out, {$_COOKIE['user_firstname']}!</h2><p>Come back again soon</p>";
+echo '<div id="redtext"><h2>You are now logged out, '.$_COOKIE['user_firstname'].'!</h2><p>Come back again soon</p></div>';
 
 include ('./includes/footer.php');
 

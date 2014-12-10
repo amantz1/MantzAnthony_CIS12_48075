@@ -83,10 +83,10 @@
      
     if(mysqli_affected_rows($dbc) == 1) {
     // data successfully inserted
-    $message = '<h2>Thank you for registering with Rock and a Hard Place Productions!</h2><p>You are about to experience the best in digital audio, video, and web design! Please <a href="./login.php">log in here</a></p>';
+    $message = '<div id="redtext"> <h2>Thank you for registering with Rock and a Hard Place Productions!</h2><p>You are about to experience the best in digital audio, video, and web design! Please <a href="./login.php">log in here</a></p></div>';
     } else {
     // error - data not inserted
-    $message = "<h2>System Error</h2><p class='error'>Your information could not be added to our database.<br />We apologize for any inconvenience, please <a href='javascript:history.back()'>try again</a>.</p>";
+    $message = "<div class='error'><h2>System Error</h2><p>Your information could not be added to our database.<br />We apologize for any inconvenience, please <a href='javascript:history.back()'>try again</a>.</p></div>";
     $message .= '<p><span class="content-caption">Debugging information</span>Error message: <br />'.mysqli_error($dbc).'<br /><br />Query: <br />'. $q .'</p>';
     }
     // free result set -- not needed because insert statement returns boolean value
@@ -94,7 +94,7 @@
      
     } else {
     //query unsuccessful
-    $message = '<h2>Error</h2><p class="error-message error">There was an error accessing the database. Please try again later.</p>';	
+    $message = '<div class="error"><h2>Error</h2><p>There was an error accessing the database. Please try again later.</p></div>';	
     }
     //disconnect from db
 		mysqli_close($dbc);
@@ -107,53 +107,56 @@
     exit();
      
     } else {
-    $errors['flag'] = "<div class='error-message error'><h2>Error</h2><p>Your registration is not complete.<br />Please doublecheck your information and resubmit after correcting the highlighted errors.</p></div>";
+    $errors['flag'] = "<div class='error'><h2>Error</h2><p>Your registration is not complete.<br />Please doublecheck your information and resubmit after correcting the highlighted errors.</p></div>";
     }
     //disconnect from db
 	mysqli_close($dbc); // Close the database connection.
     }
 ?>	
+
+	<div id="redtext">
+    	<h1>New User Registration</h1>
+    	<h2>Register to experience the Ultimate Production Company!</h2>
+       </div>
 <!--------------------Begin Form------------------------>
-    <h2>New User Registration</h2>
     <?php echo (isset($errors['flag']))? $errors['flag'] : ''; ?>
+    <div id="regform">
     <form action="" method="post">
     <p>
     <label for='fn'>First Name: </label>
-    <input type="text" id='fn' name="first_name" size="15" maxlength="20" value="<?php if (isset($_POST['first_name'])) echo $_POST['first_name']; ?>" />
-    <?php echo (isset($errors['fn']))?'<span class="error">'.$errors['fn'].'</span>' : ''; ?>
+    <input type="text" id='fn' name="first_name" size="15" maxlength="20" value="<?php if (isset($_POST['first_name'])) echo $_POST['first_name']; ?>" /><br/>
+    <?php echo (isset($errors['fn']))?'<div class="error">'.$errors['fn'].'</div>' : ''; ?>
     </p>
     <p>
     <label for='ln'>Last Name: </label>
     <input type="text" id='ln' name="last_name" size="15" maxlength="40" value="<?php if (isset($_POST['last_name'])) echo $_POST['last_name']; ?>" />
-    <?php echo (isset($errors['ln']))?'<span class="error">'.$errors['ln'].'</span>' : ''; ?></p>
+    <?php echo (isset($errors['ln']))?'<div class="error">'.$errors['ln'].'</div>' : ''; ?></p>
     <p>
     <label for='ph'>Phone Number: </label>
     <input type="text" id='ph' name="phone" size="20" maxlength="12" value="<?php if (isset($_POST['phone'])) echo $_POST['phone']; ?>" />
-    <?php echo (isset($errors['ph']))?'<span class="error">'.$errors['ph'].'</span>' : ''; ?>
+    <?php echo (isset($errors['ph']))?'<div class="error">'.$errors['ph'].'</div>' : ''; ?>
     </p>
     <p>
     <label for='e'>Email Address: </label>
     <input type="text" id='e' name="email" size="20" maxlength="60" value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>" />
-    <?php echo (isset($errors['e']))?'<span class="error">'.$errors['e'].'</span>' : ''; ?>
+    <?php echo (isset($errors['e']))?'<div class="error">'.$errors['e'].'</div>' : ''; ?>
     </p>
     <p>
     <label for='p1'>Password: </label>
     <input type="password" id='p1' name="pass1" size="10" maxlength="20" value="<?php if (isset($_POST['pass1'])) echo $_POST['pass1']; ?>" />
-    <?php echo (isset($errors['p1']))?'<span class="error">'.$errors['p1'].'</span>' : ''; ?>
+    <?php echo (isset($errors['p1']))?'<div class="error">'.$errors['p1'].'</div>' : ''; ?>
     </p>
     <p>
     <label for='p2'>Confirm Password: </label>
     <input type="password" id='p2' name="pass2" size="10" maxlength="20" value="<?php if (isset($_POST['pass2'])) echo $_POST['pass2']; ?>" />
-    <?php echo (isset($errors['p2']))?'<span class="error">'.$errors['p2'].'</span>' : ''; ?>
+    <?php echo (isset($errors['p2']))?'<div class="error">'.$errors['p2'].'</div>' : ''; ?>
     </p>
     <p>
     <input type="submit" name="submit" value="Register" />
     </p>
     </form>
+    </div>
 <!---------------------End Form------------------------->
 <?php
 	include ('./includes/footer.php');
 ?> 
-  
-</body>
-</html>

@@ -12,7 +12,8 @@ if (!isset($_SESSION['admin_id'])){
 }
 $page_title = 'Rock and a Hard Place Productions - You have been logged out';
 include ('./includes/header.php');
-echo "<h2>You are now logged out</h2>";
+echo '<div id="redtext">';
+echo "<h2>You are now logged out</h2></div>";
 
 include ('./includes/footer.php');
 

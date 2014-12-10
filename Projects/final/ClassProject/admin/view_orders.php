@@ -8,10 +8,10 @@ if (!isset($_SESSION['admin_id'])){
 
 $page_title = 'Rock and a Hard Place Productions - ADMIN View Orders';
 include ('./includes/header.php');
-
+echo '<div id="redtext">';
 echo "<p>Hello {$_SESSION['admin_firstname']}.</p>";
 echo '<h1>Invoices</h1>';
-
+echo '</div>';
 require ('../../../../mysqli_connect.php');
 
 // Number of records to show per page:
@@ -81,7 +81,7 @@ $q="SELECT i.invoice_id, i.invoice_total, DATE_FORMAT(i.invoice_time, '%M %d, %Y
 $r = @mysqli_query ($dbc, $q);
 	
 // Table header:
-echo '<table align="center" cellspacing="0" cellpadding="5" width="75%">
+echo '<table align="center" width="100%">
 <tr>
 	<td align="left"></td>
 	<td align="left"><b>Last Name<a href="view_orders.php?sort=lna"> v</a></b>

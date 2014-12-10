@@ -13,13 +13,15 @@ if (isset($errors) && !empty($errors)){
 	
 }
 ?>
-<h1>Client Login</h1>
+<div id="redtext"><h1>Client Login</h1></div>
+
+<div id="regform">
 <form action="login.php" method="post">
 	<p>Email address: <input type="text" name="email" size="20" maxlength="40" /></p>
     <p>Password: <input type="password" name="pass" size="20" max="20" /></p>
     <p><input type="submit" name="submit" value="login" /></p>
     </form>
-
+</div>
 <?php
 include ('./includes/footer.php');
 ?>

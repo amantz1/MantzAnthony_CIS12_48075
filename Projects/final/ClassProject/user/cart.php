@@ -78,7 +78,7 @@ if (!empty($_SESSION['cart'])) {
 	<br /><br /><a href="checkout.php">Checkout</a> or <a href="../services.php">Keep Shopping</a></p>';
 
 } else {
-	echo '<p>Your cart is currently empty.</p>';
+	echo '<div id="redtext"><p>Your cart is currently empty.</p></div>';
 }
 
 include ('./includes/footer.php');

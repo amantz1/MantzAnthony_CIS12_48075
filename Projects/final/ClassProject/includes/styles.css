@@ -1,6 +1,15 @@
 @charset "UTF-8";
 /* CSS Document */
 /*Style Sheet for Rock and a Hard Place Productions*/
+
+body {
+	background-color: #000;
+}
+#container {
+	width: 800px;
+	margin: 20px auto 0 auto;
+	background-color: #000;
+}
 #nav ul {
 	display: block;
 }
@@ -13,4 +22,50 @@
 	clear: both;
 	padding-top: 10px;
 }
-#footer {clear: both;}
+#redtext {
+	color: red;
+}
+#footer {
+	clear: both;
+	color: white;
+	text-align: left;
+	margin-left: 80px;
+}
+table {
+	background-color: #FFF;
+	border: none;
+	padding: 10px 10px 10px 10px;
+}
+#services tr:nth-child(odd) {
+	background-color: #fff;
+}
+#services tr:nth-child(even) {
+	background-color: #eee;
+}
+#regform{
+	width: 60%;
+	background-color: #eee;
+	margin-left: 80px;
+	margin-bottom: 40px;
+	padding: 40px;
+	position:relative;
+}
+#delform{
+	width: 60%;
+	background-color: #eee;
+	margin-left: 80px;
+	margin-bottom: 40px;
+	padding: 40px;
+	position:relative;
+}
+#regform input {
+	position: absolute;
+	right: 200px;
+}
+#regform label {
+	position: relative;
+	left: 50px;
+}
+.error {
+	color: red;
+}

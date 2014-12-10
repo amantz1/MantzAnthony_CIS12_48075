@@ -3,7 +3,7 @@
 // Set the page title and include the HTML header:
 $page_title = 'Order Confirmation';
 include ('./includes/header.php');
-
+echo '<div id="redtext">';
 // Assume that the customer is logged in and that this page has access to the customer's ID:
 $cid = 1; // Temporary.
 
@@ -53,7 +53,7 @@ if (mysqli_affected_rows($dbc) == 1) {
 		unset($_SESSION['cart']);
 		unset($_SESSION['orderTot']);
 		// Message to the customer:
-		echo '<p>Thank you. You will be contacted shortly to schedule.</p>';
+		echo '<h1>Thank you!</h1><h1>You will be contacted shortly to schedule.</h1>';
 		
 		// Send emails and do whatever else.
 	
@@ -61,7 +61,7 @@ if (mysqli_affected_rows($dbc) == 1) {
 	
 		mysqli_rollback($dbc);
 		
-		echo '<p>Your order could not be processed due to a system error. You will be contacted in order to have the problem fixed. We apologize for the inconvenience.A</p>';
+		echo '<p>Your order could not be processed due to a system error. You will be contacted in order to have the problem fixed. We apologize for the inconvenience.</p>';
 		// Send the order information to the administrator.
 		
 	}
@@ -70,13 +70,13 @@ if (mysqli_affected_rows($dbc) == 1) {
 
 	mysqli_rollback($dbc);
 
-	echo '<p>Your order could not be processed due to a system error. You will be contacted in order to have the problem fixed. We apologize for the inconvenience.B</p>';
+	echo '<p>Your order could not be processed due to a system error. You will be contacted in order to have the problem fixed. We apologize for the inconvenience.</p>';
 	
 	// Send the order information to the administrator.
 	
 }
 
 mysqli_close($dbc);
-
+echo '</div>';
 include ('includes/footer.php');
 ?>

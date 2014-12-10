@@ -4,7 +4,7 @@
 
 $page_title = 'Delete a User';
 include ('./includes/header.php');
-echo '<h1>Delete a User</h1>';
+echo '<div id="redtext"><h1>Delete a User</h1>';
 
 // Check for a valid user ID, through GET or POST:
 if ( (isset($_GET['id'])) && (is_numeric($_GET['id'])) ) { // From view_users.php
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	} else { // No confirmation of deletion.
 		echo '<p>The user has NOT been deleted.</p>';	
 	}
-
+echo '</div>';
 } else { // Show the form.
 
 	// Retrieve the user's information:
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 		// Get the user's information:
 		$row = mysqli_fetch_array ($r, MYSQLI_NUM);
-		
+		echo '<div id="delform">';
 		// Display the record being deleted:
 		echo "<h3>Name: $row[0]</h3>
 		Are you sure you want to delete this user?";
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<input type="radio" name="sure" value="No" checked="checked" /> No
 	<input type="submit" name="submit" value="Submit" />
 	<input type="hidden" name="id" value="' . $id . '" />
-	</form>';
+	</form></div>';
 	
 	} else { // Not a valid user ID.
 		echo '<p class="error">This page has been accessed in error.</p>';

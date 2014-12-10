@@ -7,8 +7,12 @@ if (!isset($_COOKIE['user_id'])){
 
 $page_title = 'Rock and a Hard Place Productions - Account Info';
 include ('./includes/header.php');
+?>
+<div id="redtext"><h2>Thank you for logging in, <?php echo $_COOKIE['user_firstname'];?>!</h2></div>
+<h3><a href="../services.php">Shop the Site</a></h3>
+<h3><a href="cart.php">View Cart</a></h3>
+<p><a href="logout.php">Logout</a></p>
 
-echo "<h1>Account Info</h1><p>Thank you for logging in, {$_COOKIE['user_firstname']}!</p><p><a href=\"logout.php\">Logout</a></p>";
-
+<?php
 include ('./includes/footer.php');
 ?>
