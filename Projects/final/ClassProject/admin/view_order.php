@@ -8,7 +8,7 @@ if (!isset($_SESSION['admin_id'])){
 
 $page_title = 'Rock and a Hard Place Productions - ADMIN View Order';
 include ('./includes/header.php');
-
+echo '<div id="redtext">';
 echo "<p>Hello {$_SESSION['admin_firstname']}.</p>";
 echo '<h1>Invoice Details</h1>';
 
@@ -26,7 +26,7 @@ else {
 		echo '<h4>Phone: '.$row['user_phone'].'</h4>';
 	}
 		mysqli_free_result ($r);
-
+echo '</div>';
 	// Table header:
 	echo '<table align="center" cellspacing="0" cellpadding="5" width="75%">
 	<tr>
